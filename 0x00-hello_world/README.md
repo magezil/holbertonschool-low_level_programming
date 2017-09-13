@@ -6,4 +6,4 @@
 3-name         : compile C file and creates executable named cisfun\
 4-puts.c       : prints the following message followed by a new line using puts: "Programming is like building a multilingual puzzle\
 5-printf.c     : prints the following message followed by a new line using printf: with proper grammar, but the outcome is a piece of art,\
-6-size.c       : prints the size of various types on the computer the script is compiled and run on\
+6-size.c       : prints the size of various types on the computer the script is compiled and run on
