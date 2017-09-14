@@ -4,7 +4,6 @@
 
 /**
  * main - Print random number n and whether it is positive or negative
- * @n: The random number to be gernated and printed
  *
  * Return: 0 (success)
  */
