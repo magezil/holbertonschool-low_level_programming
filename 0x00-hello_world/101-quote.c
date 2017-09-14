@@ -4,12 +4,13 @@
 /**
  * main - prints error message
  *
- * Return - 1
+ * Return: 1 since exits with an error
  */
 
 int main(void)
 {
-	char* err = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char *err = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+
 	fwrite(err, sizeof(char), strlen(err), stderr);
 	return (1);
 }
