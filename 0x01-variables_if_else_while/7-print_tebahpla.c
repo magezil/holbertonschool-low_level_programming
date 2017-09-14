@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - print a-z followed by a new line
+ * main - print z-a followed by a new line
  *
  * Return: 0 (success)
  */
