@@ -17,11 +17,11 @@ int main(void)
 	number = 50;
 	first = 1;
 	second = 2;
-	for (count = 0; count < number; count++)
+	for (count = 1; count < number; count++)
 	{
-		if (count == 0)
+		if (count == 1)
 			printf("%lu, ", first);
-		else if (count == 1)
+		else if (count == 2)
 			printf("%lu, ", second);
 		else
 		{
