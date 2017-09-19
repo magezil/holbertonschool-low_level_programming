@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * main - prints the Fibonacci numbers less than 4,000,000
+ * main - prints sum of even Fibonacci numbers less than 4,000,000
  *
  * Return: 0 (success)
  */
@@ -12,28 +12,28 @@ int main(void)
 	unsigned long int first;
 	unsigned long int second;
 	unsigned long int sum;
+	unsigned long int total;
 
 	number = 4000000;
 	first = 1;
 	second = 2;
 	sum = first;
+	total = 0;
 	while (sum < number)
 	{
 		if (sum == 1)
 		{
-			printf("%lu, ", first);
 			sum = second;
 		}
 		else
 		{
-			printf("%lu", sum);
+			if (sum % 2 == 0)
+				total += sum;
 			sum = first + second;
 			first = second;
 			second = sum;
-			if (sum < number)
-				printf(", ");
 		}
 	}
-	printf("\n");
+	printf("%lu\n", total);
 	return (0);
 }
