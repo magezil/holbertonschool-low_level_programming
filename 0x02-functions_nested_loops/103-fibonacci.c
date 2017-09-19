@@ -24,11 +24,6 @@ int main(void)
 			printf("%lu, ", first);
 			sum = second;
 		}
-		else if (sum == 2)
-		{
-			printf("%lu, ", second);
-			sum = first + second;
-		}
 		else
 		{
 			printf("%lu", sum);
