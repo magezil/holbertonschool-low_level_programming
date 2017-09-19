@@ -21,6 +21,6 @@ int main(void)
 		else if (i % 5 == 0)
 			sum += i;
 	}
-	printf("The sum of all natural numbers less than %d is %d\n", end, sum);
+	printf("%d\n", sum);
 	return (0);
 }
