@@ -6,19 +6,24 @@
  */
 void print_number(int n)
 {
+	unsigned int un;
 	int tens = 1;
 
 	if (n < 0)
 	{
+		un = -n;
 		_putchar('-');
-		n = -n;
 	}
-	while (n / tens >= 10)
+	else
+	{
+		un = n;
+	}
+	while (un / tens >= 10)
 		tens *= 10;
 	while (tens > 0)
 	{
-		_putchar((n / tens) + '0');
-		n %= tens;
+		_putchar((un / tens) + '0');
+		un %= tens;
 		tens /= 10;
 	}
 }
