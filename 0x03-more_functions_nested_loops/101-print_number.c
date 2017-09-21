@@ -7,8 +7,9 @@
 void print_number(int n)
 {
 	unsigned int un;
-	int tens = 1;
+	int tens;
 
+	tens = 1;
 	if (n < 0)
 	{
 		un = -n;
