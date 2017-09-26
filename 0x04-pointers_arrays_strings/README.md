@@ -2,4 +2,4 @@
 
 0-reset_to_98.c - change value of given parameter to 98\
 1-swap.c - swap value of two integers\
-2
+2-strlen.c - return length of a string
