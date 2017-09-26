@@ -10,11 +10,15 @@ void puts_half(char *str)
 	int len;
 
 	len = _strlen(str);
-	for (i = len / 2 + 1; i < len; i++)
+	i = len / 2;
+	if (len % 2 != 0)
+		i++;
+	for (; i < len; i++)
 	{
 		_putchar(*(str + i));
 	}
-	_putchar('\n');
+	if (len > 0)
+		_putchar('\n');
 }
 
 #include "holberton.h"
