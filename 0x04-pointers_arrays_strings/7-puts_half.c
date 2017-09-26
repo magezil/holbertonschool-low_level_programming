@@ -17,8 +17,7 @@ void puts_half(char *str)
 	{
 		_putchar(*(str + i));
 	}
-	if (len > 0)
-		_putchar('\n');
+	_putchar('\n');
 }
 
 #include "holberton.h"
