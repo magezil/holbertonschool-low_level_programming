@@ -20,8 +20,6 @@ void puts_half(char *str)
 	_putchar('\n');
 }
 
-#include "holberton.h"
-
 /**
  * _strlen - return length of a string
  * @s: string to find the length of
