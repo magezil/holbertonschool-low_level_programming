@@ -24,11 +24,7 @@ char *rot13(char *s)
 				s[i] = encode[j - 'a'];
 				break;
 			}
-			else
-			{
-				s[i] = encode[j - 'a'] - upper;
-				break;
-			}
+			s[i] = encode[j - 'a'] - upper;
 		}
 	}
 	return (s);
