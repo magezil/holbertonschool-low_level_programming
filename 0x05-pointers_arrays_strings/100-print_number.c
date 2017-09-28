@@ -7,7 +7,7 @@
 void print_number(int n)
 {
 	int div = 1;
-	unsigned num;
+	unsigned int num;
 
 	if (n < 0)
 	{
