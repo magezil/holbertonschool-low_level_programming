@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+
 /**
  * print_number - prints given number
  * @n: number to print
@@ -13,7 +13,7 @@ void print_number(int n)
 		_putchar('-');
 		div = -1;
 	}
-	
+
 	while (n / div > 9)
 		div *= 10;
 
