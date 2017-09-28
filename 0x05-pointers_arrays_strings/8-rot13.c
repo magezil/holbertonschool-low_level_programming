@@ -10,23 +10,23 @@
 char *rot13(char *s)
 {
 	int i;
-	int j;
+	char j;
 	char upper = 'a' - 'A';
 	char *encode = "nopqrstuvwxyzabcdefghijklm";
 	/*    *alpha = "abcdefghijklmnopqrstuvwxyz";*/
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; j <= 26 ; j++)
+		for (j = s[i]; ((j >= 'a' && j <= 'z') || (j >= 'A' && j <= 'Z')); j++)
 		{
-			if (s[i] == (j + 'a'))
+			if (s[i] == j)
 			{
-				s[i] = encode[j];
+				s[i] = encode[j - 'a'];
 				break;
 			}
-			else if (s[i] == (j + 'a') - upper)
+			else
 			{
-				s[i] = encode[j] - upper;
+				s[i] = encode[j - 'a'] - upper;
 				break;
 			}
 		}
