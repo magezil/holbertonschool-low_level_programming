@@ -10,21 +10,16 @@
 char *rot13(char *s)
 {
 	int i;
-	char j;
-	char upper = 'a' - 'A';
-	char *encode = "nopqrstuvwxyzabcdefghijklm";
-	/*    *alpha = "abcdefghijklmnopqrstuvwxyz";*/
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = s[i]; ((j >= 'a' && j <= 'z') || (j >= 'A' && j <= 'Z')); j++)
+		while ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'))
 		{
-			if (s[i] == j)
-			{
-				s[i] = encode[j - 'a'];
-				break;
-			}
-			s[i] = encode[j - 'a'] - upper;
+			if (s[i] >= 'a' && s[i] <= 'z')
+				s[i] = (s[i] - 'a' + 13) % 26 + 'a';
+			else
+				s[i] = (s[i] - 'A' + 13) % 26 + 'A';
+			break;
 		}
 	}
 	return (s);
