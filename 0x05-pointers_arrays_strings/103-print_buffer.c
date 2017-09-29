@@ -27,8 +27,7 @@ void print_buffer(char *b, int size)
 		}
 		for (line = 0; line < 10 && (line + i) < size; line++)
 		{
-			if (b[i + line] < 9 || (b[i + line] >= 10 && b[i + line] <= 31) ||
-				b[i + line] == 127)
+			if (b[i + line] <= 31 || b[i + line] >= 127)
 				printf(".");
 			else
 				printf("%c", b[i + line]);
