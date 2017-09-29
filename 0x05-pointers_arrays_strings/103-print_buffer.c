@@ -10,6 +10,9 @@ void print_buffer(char *b, int size)
 {
 	int i, line;
 
+	if (size <= 0)
+		printf("\n");
+
 	for (i = 0; i < size; i += 10)
 	{
 		printf("%08x: ", i);
