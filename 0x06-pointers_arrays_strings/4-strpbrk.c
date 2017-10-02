@@ -5,7 +5,7 @@
  * @s: string to search through
  * @accept: set of bytes to locate
  *
- * Return: pointer to first occurence or NULL(0) if not found
+ * Return: pointer to first occurence or NULL if not found
  */
 char *_strpbrk(char *s, char *accept)
 {
@@ -16,7 +16,7 @@ char *_strpbrk(char *s, char *accept)
 		else
 			return (s);
 	}
-	return (0);
+	return (NULL);
 }
 
 /**
@@ -36,5 +36,5 @@ char *_strchr(char *s, char c)
 	}
 	if (c == '\0')
 		return (s);
-	return (0);
+	return (NULL);
 }
