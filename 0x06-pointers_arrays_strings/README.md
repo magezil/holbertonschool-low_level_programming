@@ -2,4 +2,5 @@
 
 0-memset.c - fill memory with a constant byte\
 1-memcpy.c - copy memory area\
-2-strchr.c - locate character in string
+2-strchr.c - locate character in string\
+3-strspn.c - get length of prefix substring
