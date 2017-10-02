@@ -1,4 +1,3 @@
-#0x06-pointers_arrays_strings
+#holbertonschool-low_level_programming
 
-0-memset.c - fill memory with a constant byte\
-1-memcpy.c - copy memory area
+C programs
