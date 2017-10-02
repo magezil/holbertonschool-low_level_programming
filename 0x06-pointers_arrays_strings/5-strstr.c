@@ -14,14 +14,32 @@ char *_strstr(char *haystack, char *needle)
 	while (*haystack != '\0')
 	{
 		i = 0;
-		if (*haystack == *needle)
-		{
-			while (*(haystack + i) == *(needle + i) && *(needle + i) != '\0')
-				i++;
-			if (*(haystack + i) == *(needle + i))
-				return (haystack);
-		}
+		haystack = _strchr(haystack, needle[0]);
+		while (*(haystack + i) == *(needle + i) && *(needle + i) != '\0')
+			i++;
+		if (*(needle + i) == '\0')
+			return (haystack);
 		haystack++;
 	}
-	return (0);
+	return ((void *)0);
+}
+
+/**
+ * _strchr - locate character in string
+ * @s: string to search through
+ * @c: character to find
+ *
+ * Return: first occurance of character or NULL if not found
+ */
+char *_strchr(char *s, char c)
+{
+	while (*s != '\0')
+	{
+		if (*s == c)
+			return (s);
+		s++;
+	}
+	if (c == '\0')
+		return (s);
+	return ((void *)0);
 }
