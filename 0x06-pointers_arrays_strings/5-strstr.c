@@ -15,13 +15,15 @@ char *_strstr(char *haystack, char *needle)
 	{
 		i = 0;
 		haystack = _strchr(haystack, needle[0]);
+		if (haystack == 0)
+			return (0);
 		while (*(haystack + i) == *(needle + i) && *(needle + i) != '\0')
 			i++;
 		if (*(needle + i) == '\0')
 			return (haystack);
 		haystack++;
 	}
-	return ((void *)0);
+	return (0);
 }
 
 /**
@@ -41,5 +43,5 @@ char *_strchr(char *s, char c)
 	}
 	if (c == '\0')
 		return (s);
-	return ((void *)0);
+	return (0);
 }
