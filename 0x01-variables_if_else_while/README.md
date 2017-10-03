@@ -1,4 +1,4 @@
-#0x01-variables_if_else_while
+# 0x01-variables_if_else_while
 
 0-positive_or_negative.c : generate random number n and print if it is positive, negative, or zero\
 1-last_digit.c : generate random number n and print the last digit of n and whether the last digit is greater than 5, 0, or less than 6\

@@ -1,4 +1,4 @@
-#0x05-pointers_arrays_strings
+# 0x05-pointers_arrays_strings
 
 0-strcat.c - concatenates two strings\
 1-strncat.c - concatenates two strings (up to n bytes of src string)\

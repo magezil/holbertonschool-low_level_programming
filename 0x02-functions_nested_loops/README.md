@@ -1,4 +1,4 @@
-#0x02-functions_nested_loops
+# 0x02-functions_nested_loops
 
 0-holberton.c - print Holberton followed by new line\
 1-alphabet.c - print lowercase alphabet followed by new line\

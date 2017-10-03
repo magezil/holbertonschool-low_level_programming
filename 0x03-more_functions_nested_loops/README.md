@@ -1,4 +1,4 @@
-#0x03-more_functions_nested_loops
+# 0x03-more_functions_nested_loops
 
 0-isupper.c : function checks if given character is upper case\
 1-isdigit.c : function checks if given character is a digit\
