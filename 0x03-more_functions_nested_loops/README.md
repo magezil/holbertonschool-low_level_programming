@@ -10,4 +10,6 @@
 7-print_diagonal.c : function prints a diagonal line of size n\
 8-print_square.c : function prints a square of size n\
 9-fizz_buzz.c : program prints numbers 1-100 replacing multiples of 3 with Fizz, multiples of 5 with Buzz, and multiples of both with FizzBuzz\
-10-print-triangle.c: function prints a triangle of size n
+10-print-triangle.c: function prints a triangle of size n\
+100-prime_factor.c - find and print largest prime factor of 612852475143\
+101-print_number.c - print given integer using _putchar()\
