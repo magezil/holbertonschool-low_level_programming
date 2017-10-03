@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * _strstr - find a needle in a haystack, aka locate substring
