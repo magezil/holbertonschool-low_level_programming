@@ -29,7 +29,7 @@ int is_palindrome(char *s)
  */
 int is_palindrome_helper(char *s, char *end)
 {
-	if (*s >= *end)
+	if (s >= end)
 		return (1);
 	if (*s != *end)
 		return (0);
