@@ -26,7 +26,7 @@ int _sqrt_recursion(int n)
  */
 int _sqrt_recursion_helper(int n, int d)
 {
-	if (d == 0)
+	if (d == 1)
 		return (-1);
 	if (n % d == 0 && n / d == d)
 		return (d);
