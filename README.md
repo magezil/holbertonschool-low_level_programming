@@ -6,4 +6,5 @@
 0x03-more_functions_nested_loops - More functions and nested loops\
 0x04-pointers_arrays_strings - Introduction to pointers, arrays, and strings\
 0x05-pointers_arrays_strings - More pointers, arrays, and strings\
-0x06-pointers_arrays_strings - Even more pointers, arrays, and strings, including pointers to pointers
+0x06-pointers_arrays_strings - Even more pointers, arrays, and strings, including pointers to pointers\
+0x07-recursion - Introduction to recursion
