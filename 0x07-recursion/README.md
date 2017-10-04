@@ -9,5 +9,5 @@
 4-pow_recursion.c - compute the value of a number to the power of another number  
 5-sqrt_recursion.c - compute the natural square root of a number  
 6-is_prime_number.c - check if number is a prime number  
-7-is_palindrome.c - check if string is a palindrome
+7-is_palindrome.c - check if string is a palindrome  
 100-wildcmp.c - check if two strings are identical
