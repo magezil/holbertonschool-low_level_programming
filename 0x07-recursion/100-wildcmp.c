@@ -12,10 +12,12 @@ int wildcmp(char *s1, char *s2)
 {
 	if (*s1 == '\0')
 	{
-		while (*s2 != '\0' && *s2 == '*')
-			s2++;
+		/* Find if last character of s2 is a * or not */
+		if (*s2 != '\0' && *s2 == '*')
+			return (wildcmp(s1, s2 + 1));
 		return (*s2 == '\0');
 	}
+	/* If there are characters in s1 but not s2, they are not the same */
 	if (*s2 == '\0')
 		return (0);
 
