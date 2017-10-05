@@ -2,8 +2,8 @@
 
 /**
  * main - print program name
- * @argc - number of arguments given
- * @argv - arguments given
+ * @argc: number of arguments given
+ * @argv: arguments given
  *
  * Return: Always 0 (success)
  */
