@@ -10,7 +10,6 @@
  */
 int wildcmp(char *s1, char *s2)
 {
-	printf("hello");
 	if (*s1 == '\0')
 	{
 		/* Find if last character of s2 is a * or not */
