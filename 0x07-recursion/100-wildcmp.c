@@ -17,10 +17,6 @@ int wildcmp(char *s1, char *s2)
 			return (wildcmp(s1, s2 + 1));
 		return (*s2 == '\0');
 	}
-	/* If there are characters in s1 but not s2, they are not the same */
-	if (*s2 == '\0')
-		return (0);
-
 	if (*s1 == *s2)
 		return (wildcmp(s1 + 1, s2 + 1));
 
