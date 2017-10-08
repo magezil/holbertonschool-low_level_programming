@@ -7,7 +7,7 @@
  * @argc: number of arguments given, should be 2
  * @argv: arguments given, should be change to be made
  *
- * Return: 0 (success) or 
+ * Return: 0 (success) or
  *         1 if 0 or more than 1 argument passed or given invalid number
  */
 int main(int argc, char *argv[])
@@ -22,11 +22,6 @@ int main(int argc, char *argv[])
 
 	coins = 0;
 	cents = atoi(argv[1]);
-	if (cents < 0)
-	{
-		printf("Error\n");
-		return (1);
-	}
 	while (cents > 0)
 	{
 		if (cents >= 25)
