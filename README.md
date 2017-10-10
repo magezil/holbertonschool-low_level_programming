@@ -10,3 +10,4 @@
 0x07-recursion - Introduction to recursion  
 0x08-static_libraries - Introduction to static libraries  
 0x09-argc_argv - Introduction to main arguments: argc, argv  
+0x0A-malloc_free - Introduction to dynamic allocation: malloc and free  
