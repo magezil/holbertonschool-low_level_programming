@@ -8,3 +8,4 @@
 3-alloc_grid.c - return pointer to a 2D array of integers  
 4-free_grid.c - free 2D array of integers created by alloc-grid  
 5-argstostr.c - concatenate all arguments given to program on command line  
+100-strtow.c - split string into words
