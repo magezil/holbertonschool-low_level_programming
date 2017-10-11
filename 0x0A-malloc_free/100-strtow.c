@@ -22,7 +22,7 @@ char **strtow(char *str)
 			wc++;
 
 	words = malloc(sizeof(char *) * (wc + 1));
-	if (words == NULL)
+	if (words == NULL || wc == 0)
 		return (NULL);
 
 	count = 0;
@@ -45,6 +45,6 @@ char **strtow(char *str)
 			words[i][j] = str[count];
 		words[i][j] = '\0';
 	}
-	words[wc] = NULL;
+	words[i] = NULL;
 	return (words);
 }
