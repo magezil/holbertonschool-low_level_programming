@@ -11,13 +11,10 @@
 char **strtow(char *str)
 {
 	char **words;
-	int wc, cc;
-	int i, j, count;
-	int wordon = 0;
+	int wc = 0, cc = 0, i, j, count = 0, wordon = 0;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-	wc = 0;
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (wordon == 0 && str[i] != ' ')
@@ -25,25 +22,19 @@ char **strtow(char *str)
 			wordon = 1;
 			wc++;
 		}
-		
 		if (str[i] == ' ' && wordon == 1)
-			wordon = 0;	
+			wordon = 0;
 	}
-
 	if (wc == 0)
 		return (NULL);
-
 	words = malloc(sizeof(char *) * (wc + 1));
 	if (words == NULL)
 		return (NULL);
-
-	count = 0;
-	for (i = 0; i < wc; i++)
+	for (count = 0, i = 0; i < wc; i++)
 	{
-		cc = 0;
 		while (str[count] == ' ' && str[count] != '\0')
 			count++;
-		for (j = 0; str[count + j] != '\0' && str[count + j] != ' '; j++)
+		for (cc = 0, j = 0; str[count + j] != '\0' && str[count + j] != ' '; j++)
 			cc++;
 		words[i] = malloc(sizeof(char) * (cc + 1));
 		if (words[i] == NULL)
