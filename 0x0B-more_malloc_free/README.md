@@ -4,5 +4,5 @@
 
 0-malloc_checked.c - allocates given amount of memory using malloc  
 1-string_nconcat.c - concatenate a string to n bytes of a second string  
-2-calloc.c  
-3-array_range.c  
+2-calloc.c - allocate and initialize memory for an array   
+3-array_range.c - create array of integers    
