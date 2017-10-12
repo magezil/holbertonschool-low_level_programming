@@ -2,7 +2,7 @@
 
 ## More dynamic allocation (malloc and free)
 
-0-malloc_checked.c -   
-1-string_nconcat.c   
+0-malloc_checked.c - allocates given amount of memory using malloc  
+1-string_nconcat.c - concatenate a string to n bytes of a second string  
 2-calloc.c  
 3-array_range.c  
