@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
 		prod[len - j - tens - 1] += carry + '0';
 	}
 	_puts(prod);
+	free(prod);
 	return (0);
 }
 
