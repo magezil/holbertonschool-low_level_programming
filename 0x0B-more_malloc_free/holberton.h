@@ -11,5 +11,6 @@ unsigned int _strlen(char *s);
 int isnum(char *num);
 void _puts(char *str);
 int _putchar(char c);
+char *delete_front_buffer(char *strn);
 
 #endif

@@ -11,7 +11,7 @@
 int main(int argc, char *argv[])
 {
 	char *num1, *num2, *prod;
-	unsigned int len1, len2, len, i, j, temp, carry, tens;
+	unsigned int len1, len2, len, i, j, temp = 0, carry, tens = 0;
 
 	if (argc < 3)
 	{
@@ -25,39 +25,28 @@ int main(int argc, char *argv[])
 		_puts("Error");
 		exit(98);
 	}
-
-	printf("num1: %s, num2: %s\n", num1, num2);
 	len1 = _strlen(num1);
-	printf("len1: %u ", len1);
 	len2 = _strlen(num2);
-	printf("len2: %u\n", len2);
 	len = len1 + len2;
 	prod = _calloc(len + 1, sizeof(*prod));
-	printf("prod after calloc %s", prod);
 	if (prod == NULL)
 	{
 		_puts("Error");
 		exit(98);
 	}
-
-	carry = 0;
-	tens = 0;
-	temp = 0;
-	for (i = 0; i < len1; i++)
+	for (i = 0; i < len1; i++, tens++)
 	{
-		for (j = 0; j < len2; j++)
+		for (carry = 0, j = 0; j < len2; j++)
 		{
-			printf("temp before mul: %u ", temp);
-			temp = (num1[len1 - i - 1] - '0') * (num2[len2 - j - 1] - '0'); 
-			printf("temp after mul: %u\n", temp);
-			temp += prod[len - j - tens - 1] + carry;
+			temp = (num1[len1 - i - 1] - '0') * (num2[len2 - j - 1] - '0') + carry;
+			if (prod[len - j - tens - 1] > 0)
+				temp += prod[len - j - tens - 1] - '0';
 			prod[len - j - tens - 1] = temp % 10 + '0';
-			printf("temp after add carry: %u\n", temp);
 			carry = temp / 10;
 		}
-		tens++;
+		prod[len - j - tens - 1] += carry + '0';
 	}
-	prod[i] = '\0';
+	prod = delete_front_buffer(prod);
 	_puts(prod);
 	return (0);
 }
@@ -130,4 +119,22 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	for (i = 0; i < nmemb * size; i++)
 		p[i] = 0;
 	return (p);
+}
+
+/**
+ * delete_front_buffer - removes leading 0 or '\0' bytes
+ * @strn: number (in the form of a string) to process
+ *
+ * Return: processed string
+ */
+char *delete_front_buffer(char *strn)
+{
+	unsigned int i, j, len;
+
+	len = _strlen(strn);
+	for (i = 0; strn[i] == '\0' || strn[i] == '0'; i++)
+		;
+	for (j = 0; i < len && j < len; j++)
+		strn[j] = strn[j + i];
+	return (strn);
 }
