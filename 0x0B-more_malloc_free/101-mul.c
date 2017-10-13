@@ -46,13 +46,15 @@ int main(int argc, char *argv[])
 		}
 		prod[len - j - tens - 1] += carry + '0';
 	}
-	prod = delete_front_buffer(prod);
 	_puts(prod);
 	return (0);
 }
 
 /**
  * isnum - check if given string is a number
+ * @num: string to check
+ *
+ * Return: 1 if number, 0 otherwise
  */
 int isnum(char *num)
 {
@@ -87,6 +89,8 @@ unsigned int _strlen(char *s)
  */
 void _puts(char *str)
 {
+	while (*str == '\0' || *str == '0')
+		str++;
 	while (*str != '\0')
 	{
 		_putchar(*str);
@@ -119,22 +123,4 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	for (i = 0; i < nmemb * size; i++)
 		p[i] = 0;
 	return (p);
-}
-
-/**
- * delete_front_buffer - removes leading 0 or '\0' bytes
- * @strn: number (in the form of a string) to process
- *
- * Return: processed string
- */
-char *delete_front_buffer(char *strn)
-{
-	unsigned int i, j, len;
-
-	len = _strlen(strn);
-	for (i = 0; strn[i] == '\0' || strn[i] == '0'; i++)
-		;
-	for (j = 0; i < len && j < len; j++)
-		strn[j] = strn[j + i];
-	return (strn);
 }
