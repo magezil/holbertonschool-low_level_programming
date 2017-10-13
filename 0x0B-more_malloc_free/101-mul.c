@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	char *num1, *num2, *prod;
 	unsigned int len1, len2, len, i, j, temp = 0, carry, tens = 0;
 
-	if (argc < 3)
+	if (argc != 3)
 	{
 		_puts("Error");
 		exit(98);
@@ -90,8 +90,12 @@ unsigned int _strlen(char *s)
  */
 void _puts(char *str)
 {
-	while (*str == '\0' || *str == '0')
+	while (*str == '\0')
 		str++;
+	while (*str == '0')
+		str++;
+	if (*str == '\0')
+		_putchar('0');
 	while (*str != '\0')
 	{
 		_putchar(*str);
