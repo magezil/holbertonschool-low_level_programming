@@ -8,5 +8,8 @@ int *array_range(int min, int max);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
 unsigned int _strlen(char *s);
+int isnum(char *num);
+void _puts(char *str);
+int _putchar(char c);
 
 #endif
