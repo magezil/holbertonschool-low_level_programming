@@ -13,16 +13,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *ndog;
 
-	if (name == NULL)
-		name = "(nil)";
-	if (owner == NULL)
-		owner = "(nil)";
+	if (name == NULL || owner == NULL)
+		return (NULL);
 	ndog = malloc(sizeof(dog_t));
 	if (ndog == NULL)
 		return (NULL);
-	ndog->name = name;
+	ndog->name = malloc(sizeof(char) * _strlen(name));
+	if (ndog->name == NULL)
+		return (NULL);
+	ndog->owner = malloc(sizeof(char) * _strlen(owner));
+	if (ndog->owner == NULL)
+		return (NULL);
+
+	_strcpy(ndog->name, name);
 	ndog->age = age;
-	ndog->owner = owner;
+	_strcpy(ndog->owner, owner);
 
 	return (ndog);
 }
