@@ -8,3 +8,4 @@
 3-function_like_macro.h - header file defines macro ABS(x) that computes absolute value of x  
 4-sum.h - header file defines SUM(x, y) that computes the sum of x + y  
 101-preprocessor_abuse.c - program that can print "Hello, Holberton" followed by a new line  
+* requires compiling with gcc -nostartfiles tag
