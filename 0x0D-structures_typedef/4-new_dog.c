@@ -21,14 +21,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (ndog == NULL)
 		return (NULL);
 
-	nname = malloc(sizeof(char) * _strlen(name));
+	
+	nname = malloc(sizeof(char) * (_strlen(name) + 1));
 	if (nname == NULL)
+	{
+		free(ndog);
 		return (NULL);
+	}
 	_strcpy(nname, name);
-
-	nowner = malloc(sizeof(char) * _strlen(owner));
+	nowner = malloc(sizeof(char) * (_strlen(owner) + 1));
 	if (nowner == NULL)
+	{
+		free(nname);
+		free(ndog);
 		return (NULL);
+	}
 	_strcpy(nowner, owner);
 	ndog->name = nname;
 	ndog->age = age;
