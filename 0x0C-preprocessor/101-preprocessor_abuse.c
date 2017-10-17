@@ -1,1 +1,1 @@
-_s(){puts("Hello, Holberton");}
+m() {puts("Hello, Holberton"); }
