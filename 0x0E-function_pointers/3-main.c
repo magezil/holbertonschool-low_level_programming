@@ -12,6 +12,7 @@
 int main(int ac, char *av[])
 {
 	int (*f)(int, int);
+	int a, b;
 
 	if (ac != 4)
 	{
@@ -27,12 +28,9 @@ int main(int ac, char *av[])
 		exit(99);
 	}
 
+	a = atoi(av[1]);
+	b = atoi(av[3]);
 	/* Check for divide or mod by 0 */
-	if ((*av[2] == '/' || *av[2] == '%') && atoi(av[3]) == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-	printf("%d\n", f(atoi(av[1]), atoi(av[3])));
+	printf("%d\n", f(a, b));
 	return (0);
 }
