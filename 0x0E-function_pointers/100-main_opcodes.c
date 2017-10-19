@@ -35,8 +35,7 @@ int main(int ac, char *av[])
 	opcode = (char *)&main;
 	for (i = 0; i < num_bytes; i++)
 	{
-		/* &0xff to mask any leading ffs */
-		printf("%02x ", opcode[i] & 0xff);
+		printf("%02hhx ", opcode[i]);
 	}
 	printf("\n");
 	return (0);
