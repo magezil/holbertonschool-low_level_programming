@@ -35,7 +35,9 @@ int main(int ac, char *av[])
 	opcode = (char *)&main;
 	for (i = 0; i < num_bytes; i++)
 	{
-		printf("%02hhx ", opcode[i]);
+		printf("%02hhx", opcode[i]);
+		if (i != num_bytes - 1)
+			printf(" ");
 	}
 	printf("\n");
 	return (0);
