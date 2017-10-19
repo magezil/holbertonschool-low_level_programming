@@ -20,8 +20,8 @@ int main(int ac, char *av[])
 		exit(98);
 	}
 
-	f = get_op_func(av[2]);
 	/* Check for invalid operator */
+	f = get_op_func(av[2]);
 	if (f == NULL)
 	{
 		printf("Error\n");
