@@ -12,3 +12,7 @@
 0x09-argc_argv - Introduction to main arguments: argc, argv  
 0x0A-malloc_free - Introduction to dynamic allocation: malloc and free  
 0x0B-more_malloc_free - More dynamic allocation (malloc and free)  
+0x0C-preprocessor - Introduction to macros  
+0x0D-structures_typedef - Introduction to structures  
+0x0E-function_pointers - Introduction to pointers to functions  
+0x0F-variadic_functions - Introduction to variadic functions  
