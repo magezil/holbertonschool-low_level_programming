@@ -35,15 +35,7 @@ void print_all(const char * const format, ...)
 			}
 			j++;
 		}
-/*
-		while (prints[j].type != NULL && format[i] != *(prints[j].type))
-			j++;
-		if (prints[j].type != NULL)
-		{
-			prints[j].f(sep, args);
-			sep = ", ";
-		}
-*/		i++;
+		i++;
 	}
 	printf("\n");
 	va_end(args);
