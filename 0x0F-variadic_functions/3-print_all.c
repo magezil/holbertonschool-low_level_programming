@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "variadic_functions.h"
 
 /**
@@ -9,40 +7,79 @@
  */
 void print_all(const char * const format, ...)
 {
+	print_t prints[] = {
+		{"c", print_char},
+		{"i", print_number},
+		{"f", print_float},
+		{"s", print_string},
+		{NULL, NULL}
+	};
 	va_list args;
-	int i;
-	char *message;
+	int i, j;
 	char *sep;
 
 	va_start(args, format);
-	i = 0;
 	sep = "";
+	i = 0;
 	while (format != NULL && format[i] != '\0')
 	{
-		switch (format[i])
+		j = 0;
+		while (prints[j].type != NULL)
 		{
-		case 'c':
-			printf("%s%c", sep, va_arg(args, int));
-			sep = ", ";
-			break;
-		case 'i':
-			printf("%s%d", sep, va_arg(args, int));
-			sep = ", ";
-			break;
-		case 'f':
-			printf("%s%f", sep, va_arg(args, double));
-			sep = ", ";
-			break;
-		case 's':
-			message = va_arg(args, char *);
-			if (message == NULL)
-				message = "(nil)";
-			printf("%s%s", sep, message);
-			sep = ", ";
-			break;
+			/* only compare current format with prints type once */
+			if (format[i] == *(prints[j].type))
+			{
+				printf("%s", sep);
+				prints[j].f(args);
+				sep = ", ";
+				break;
+			}
+			j++;
 		}
 		i++;
 	}
 	printf("\n");
 	va_end(args);
+}
+
+/**
+ * print_string - print strings
+ * @args: list to retrive string from
+ */
+void print_string(va_list args)
+{
+	char *message;
+
+	message = va_arg(args, char *);
+	if (message == NULL)
+		message = "(nil)";
+	printf("%s", message);
+}
+
+/**
+ * print_number - print given numbers
+ * @args: list to retrieve int from
+ */
+void print_number(va_list args)
+{
+	printf("%d", va_arg(args, int));
+}
+
+/**
+ * print_char - print a character
+ * @args: list to retrieve char from
+ */
+void print_char(va_list args)
+{
+	printf("%c", va_arg(args, int));
+}
+
+
+/**
+ * print_float - print float
+ * @args: list to retrieve float from
+ */
+void print_float(va_list args)
+{
+	printf("%f", va_arg(args, double));
 }
