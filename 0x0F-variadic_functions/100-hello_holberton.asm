@@ -1,10 +1,14 @@
-org 0x100
+section .text
+	global main
+main:
+	mov ebx,1
+	mov ecx,msg
+	mov edx,len
+	mov eax,4
+	int 0x80
+	mov eax,1
+	int 0x80
 
-mov dx,msg
-mov ah,9
-int 0x21
-
-mov ah,0x4c
-int 0x21
-
-msg db 'Hello, Holberton!',0x0d,0x0a,$
+section .data
+	msg db 'Hello, Holberton', 0xa
+	len equ $ - msg
