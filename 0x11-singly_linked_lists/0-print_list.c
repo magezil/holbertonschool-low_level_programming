@@ -14,10 +14,10 @@ size_t print_list(const list_t *h)
 	list_t *current;
 
 	if (h == NULL)
-		return (0);
+		return (-1);
 	current = malloc(sizeof(list_t));
 	if (current == NULL)
-		return (0);
+		return (-1);
 	*current = *h;
 	count = 0;
 	while (current != NULL)
