@@ -44,7 +44,7 @@ list_t *add_node(list_t **head, const char *str)
 unsigned int _strlen(char *s)
 {
 	int count;
-	
+
 	if (s == NULL)
 		return (0);
 
