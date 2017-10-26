@@ -27,5 +27,6 @@ void free_list(list_t *head);
 
 /* Helper functions */
 int _putchar(char c);
+unsigned int _strlen(char *s);
 
 #endif
