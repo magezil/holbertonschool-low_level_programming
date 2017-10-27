@@ -10,14 +10,11 @@
 size_t print_list(const list_t *h)
 {
 	int count;
-	list_t *current;
+	const list_t *current;
 
 	if (h == NULL)
 		return (0);
-	current = malloc(sizeof(list_t));
-	if (current == NULL)
-		return (0);
-	*current = *h;
+	current = h;
 	count = 0;
 	while (current != NULL)
 	{
@@ -28,6 +25,5 @@ size_t print_list(const list_t *h)
 		count++;
 		current = current->next;
 	}
-	free(current);
 	return (count);
 }
