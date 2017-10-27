@@ -1,15 +1,11 @@
     section .data
-fmt     db "%s %s",10,0
-msg1    db "Hello,",0
-msg2    db "Holberton",0
+fmt     db "Hello, Holberton",10,0
 
     section .text
     extern printf
     global main
 
 main:
-    mov  edx, msg2
-    mov  esi, msg1
     mov  edi,fmt
     mov  eax, 0     ; no f.p. args
     call printf
