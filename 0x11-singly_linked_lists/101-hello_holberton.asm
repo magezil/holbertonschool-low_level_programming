@@ -12,4 +12,5 @@ main:
 
     mov  ebx, 0     ; return value
     mov  eax, 0
-    int  0x80
+    xor eax,eax
+    ret
