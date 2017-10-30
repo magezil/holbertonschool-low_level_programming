@@ -30,6 +30,9 @@
 * Prototype: void free_listint2(listint_t **head);
 
 ### 6-pop_listint.c
+* function deletes the head node of a *listint_t* linked list and returns head node's data
+* Prototype: int pop_listint(listint_t **head);
+* Return: data from deleted head node of linked list or 0 if linked list is empty
 
 ### 7-get_nodeint.c
 
