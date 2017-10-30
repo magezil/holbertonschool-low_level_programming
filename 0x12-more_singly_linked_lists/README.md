@@ -35,12 +35,21 @@
 * Return: data from deleted head node of linked list or 0 if linked list is empty
 
 ### 7-get_nodeint.c
-* function returns the nth node of a *listint_t* linked list
+* function returns the node at a given index of a *listint_t* linked list
 * Prototype: listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 * Return: node at given index or NULL if node doesn't exist
 
 ### 8-sum_listint.c
+* function returns the sum of all data(n) of a *listint_t* linked list
+* Prototype: int sum_listint(listint_t *head);
+* Return: sum of linked list or 0 if list is empty
 
 ### 9-insert_nodeint.c
+* function inserts a new node at a given position
+* Prototype: listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
+* Return: address of new node or NULL if failed
 
 ### 10-delete_nodeint.c
+* function deletes node at given index of a *listint_t* linked list
+* Prototype: int delete_nodeint_at_index(listint_t **head, unsigned int index);
+* Return: 1 if succeeded, 0 if failed
