@@ -17,3 +17,4 @@
 0x0E-function_pointers - Introduction to pointers to functions  
 0x0F-variadic_functions - Introduction to variadic functions  
 0x11-singly_linked_lists - Introduction to linked lists  
+0x12-more_singly_linked_lists - More linked lists
