@@ -35,6 +35,9 @@
 * Return: data from deleted head node of linked list or 0 if linked list is empty
 
 ### 7-get_nodeint.c
+* function returns the nth node of a *listint_t* linked list
+* Prototype: listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
+* Return: node at given index or NULL if node doesn't exist
 
 ### 8-sum_listint.c
 
