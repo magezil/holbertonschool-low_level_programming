@@ -53,3 +53,8 @@
 * function deletes node at given index of a *listint_t* linked list
 * Prototype: int delete_nodeint_at_index(listint_t **head, unsigned int index);
 * Return: 1 if succeeded, -1 if failed
+
+### 100-reverse_listint.c
+* function reverses a listint_t linked list
+* Prototype: listint_t *reverse_listint(listint_t **head);
+* Return: pointer to the first node of reversed list
