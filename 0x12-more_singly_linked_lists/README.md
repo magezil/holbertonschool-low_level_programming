@@ -58,3 +58,8 @@
 * function reverses a listint_t linked list
 * Prototype: listint_t *reverse_listint(listint_t **head);
 * Return: pointer to the first node of reversed list
+
+### 103-find_loop.c
+* function finds the loop in a linked list
+* Prototype: listint_t *find_listint_loop(listint_t *head);
+* Returns: address of the node where the loop starts, or NULL if there is no loop
