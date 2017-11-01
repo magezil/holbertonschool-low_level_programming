@@ -31,7 +31,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 listint_t *reverse_listint(listint_t **head);
 listint_t *find_listint_loop(listint_t *head);
+size_t print_listint_safe(const listint_t *head);
 
 int _putchar(char c);
+listint_t **create_array(unsigned int size);
+listint_t **_realloc(listint_t **ptr, unsigned int old_size, unsigned int new_size);
+int checker(listint_t *node, listint_t **list, int count);
 
 #endif /* __LISTS_H__ */
