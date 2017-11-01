@@ -29,7 +29,7 @@ size_t print_listint_safe(const listint_t *head)
 			if (temp1 == temp2)
 			{
 				printf("-> [%p] %d\n", (void *)temp1, temp1->n);
-				exit(98);
+				return (count);
 			}
 			temp2 = temp2->next;
 		}
