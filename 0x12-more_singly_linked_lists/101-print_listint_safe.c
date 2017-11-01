@@ -16,7 +16,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	visited = create_array(buff_size);
 	if (visited == NULL)
-		return 0;
+		exit(98);
 
 	count = 0;
 	temp = (listint_t *) head;
@@ -37,6 +37,7 @@ size_t print_listint_safe(const listint_t *head)
 		else
 		{
 			printf("-> [%p] %d\n", (void *)temp, temp->n);
+			free(visited);
 			exit(98);
 		}
 	}
@@ -70,36 +71,36 @@ listint_t **create_array(unsigned int size)
 /**
  * _realloc - reallocates a memory block using malloc and free
  * @ptr: pointer to old memory location allocated by malloc
- * @old_size: size of old memory location
- * @new_size: new size of memory to be allocated
+ * @old: size of old memory location
+ * @new: new size of memory to be allocated
  *
  * Return: pointer to reallocated memory (success) or NULL (fail)
  */
-listint_t **_realloc(listint_t **ptr, unsigned int old_size, unsigned int new_size)
+listint_t **_realloc(listint_t **ptr, unsigned int old, unsigned int new)
 {
 	listint_t **newp;
 	unsigned int i;
 
 	if (ptr == NULL)
 	{
-		newp = malloc(sizeof(listint_t) * new_size);
+		newp = malloc(sizeof(listint_t) * new);
 		/* return newp - if NULL, will return NULL; else return newp */
 		return (newp);
 	}
-	if (old_size == new_size)
+	if (old == new)
 		return (ptr);
-	if (new_size == 0)
+	if (new == 0)
 	{
 		if (ptr != NULL)
 			free(ptr);
 		return (NULL);
 	}
 
-	newp = malloc(new_size);
+	newp = malloc(new);
 	if (newp == NULL)
 		return (NULL);
 
-	for (i = 0; i < old_size && i < new_size; i++)
+	for (i = 0; i < old && i < new; i++)
 		newp[i] = ptr[i];
 	free(ptr);
 	return (newp);
@@ -113,11 +114,11 @@ listint_t **_realloc(listint_t **ptr, unsigned int old_size, unsigned int new_si
  *
  * Return: 1 if current is not found, 0 otherwise
  */
-int checker(listint_t *node, listint_t **list, int count)
+int checker(listint_t *node, listint_t **list, int size)
 {
 	int i;
 
-	for (i = 0; i < count; i++)
+	for (i = 0; i < size; i++)
 	{
 		if (node == list[i])
 			return (0);
