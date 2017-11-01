@@ -22,19 +22,16 @@ size_t print_listint_safe(const listint_t *head)
 	temp = (listint_t *) head;
 	while (temp != NULL)
 	{
-		if (checker(temp, visited, buff_size))
+		printf("[%p] %d\n", (void *)temp, temp->n);
+		if (count >= buff_size)
 		{
-			printf("[%p] %d\n", (void *)temp, temp->n);
-			if (count >= buff_size)
-			{
-				visited = _realloc(visited, buff_size, buff_size + 100);
-				buff_size += 100;
-			}
-			visited[count] = temp;
-			count++;
-			temp = temp->next;
+			visited = _realloc(visited, buff_size, buff_size + 100);
+			buff_size += 100;
 		}
-		else
+		visited[count] = temp;
+		count++;
+		temp = temp->next;
+		if (temp != NULL && !checker(temp, visited, buff_size))
 		{
 			printf("-> [%p] %d\n", (void *)temp, temp->n);
 			free(visited);
