@@ -55,9 +55,14 @@
 * Return: 1 if succeeded, -1 if failed
 
 ### 100-reverse_listint.c
-* function reverses a listint_t linked list
+* function reverses a *listint_t* linked list
 * Prototype: listint_t *reverse_listint(listint_t **head);
 * Return: pointer to the first node of reversed list
+
+### 101-print_listint_safe.c
+* function that prints a *listint_t* list
+* Prototype: size_t print_listint_safe(const listint_t *head);
+* Return: number of nodes
 
 ### 103-find_loop.c
 * function finds the loop in a linked list
