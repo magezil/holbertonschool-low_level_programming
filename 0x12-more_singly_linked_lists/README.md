@@ -64,6 +64,11 @@
 * Prototype: size_t print_listint_safe(const listint_t *head);
 * Return: number of nodes
 
+### 102-free_listint_safe.c
+* function that freess a *listint_t* list
+* Prototype: size_t free_listint_safe(listint_t **head)
+* Return: number of nodes
+
 ### 103-find_loop.c
 * function finds the loop in a linked list
 * Prototype: listint_t *find_listint_loop(listint_t *head);
