@@ -14,6 +14,8 @@ size_t print_listint_safe(const listint_t *head)
 	listint_t **visited;
 	listint_t *temp;
 
+	if (head == NULL)
+		exit(98);
 	visited = create_array(buff_size);
 	if (visited == NULL)
 		exit(98);
