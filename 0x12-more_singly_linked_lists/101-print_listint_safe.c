@@ -24,7 +24,7 @@ size_t print_listint_safe(const listint_t *head)
 		count++;
 		temp1 = temp1->next;
 		temp2 = head; 
-		for (i = 0, i < count; i++)
+		for (i = 0; i < count; i++)
 		{
 			if (temp1 == temp2)
 			{
