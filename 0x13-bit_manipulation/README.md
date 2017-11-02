@@ -25,3 +25,11 @@ Prototype: `int set_bit(unsigned long int *n, unsigned int index);`
 * `n`: number to get bit from
 * `index`: index of bit to set to 1
 Return: 1 if success or -1 if fail
+
+### 4-clear_bit.c
+function sets the value of a bit to `0` at given index
+Prototype: `int clear_bit(unsigned long int *n, unsigned int index);`
+* `n`: number to get bit from
+* `index`: index of bit to set to 0
+Return: 1 if success or -1 if fail
+
