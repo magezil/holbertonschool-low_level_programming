@@ -12,4 +12,9 @@ function prints binary representation of an `unsigned int`
 Prototype: `void print_binary(unsigned long int n);`
 * `n`: number to convert
 
-
+### 2-get_bit.c
+function returns the value of a bit at given index
+Prototype: `int get_bit(unsigned long int n, unsigned int index);`
+* `n`: number to get bit from
+* `index`: index of bit to return
+Return: value of bit or -1 if error
