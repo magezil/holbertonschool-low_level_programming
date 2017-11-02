@@ -15,9 +15,9 @@ int get_bit(unsigned long int n, unsigned int index)
 	mask = 1;
 	for (i = 0; i < index; i++)
 	{
+		if (mask > mask << 1)
+			break;
 		mask = mask << 1;
-		if (mask > n)
-			return (-1);
 	}
 	if ((mask & n) > 0)
 		return (1);
