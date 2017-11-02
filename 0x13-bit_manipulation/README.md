@@ -33,3 +33,9 @@ Prototype: `int clear_bit(unsigned long int *n, unsigned int index);`
 * `index`: index of bit to set to 0
 Return: 1 if success or -1 if fail
 
+### 5-flip_bits.c
+function returns the number of bits to flip to get from one number to the next
+Prototype: `unsigned int flip_bits(unsigned long int n, unsigned long int m)`
+* `n`: original number
+* `m`: number to get to
+Return: number of bits to flip
