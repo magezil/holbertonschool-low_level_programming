@@ -4,8 +4,12 @@
 ### 0-binary_to_uint.c
 function converts a binary number to an `unsigned int`
 Prototype: `unsigned int binary_to_uint(const char *b);`
-* `b` pointing to a string of `0` and `1` chars
+* `b`: pointer to a string of `0` and `1` chars
 Return: the converted number, or 0 if error
 
 ### 1-print_binary.c
+function prints binary representation of an `unsigned int`
+Prototype: `void print_binary(unsigned long int n);`
+* `n`: number to convert
+
 
