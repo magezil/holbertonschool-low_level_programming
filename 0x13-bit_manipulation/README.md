@@ -18,3 +18,10 @@ Prototype: `int get_bit(unsigned long int n, unsigned int index);`
 * `n`: number to get bit from
 * `index`: index of bit to return
 Return: value of bit or -1 if error
+
+### 3-set_bit.c
+function sets the value of a bit to `1` at given index
+Prototype: `int set_bit(unsigned long int *n, unsigned int index);`
+* `n`: number to get bit from
+* `index`: index of bit to set to 1
+Return: 1 if success or -1 if fail
