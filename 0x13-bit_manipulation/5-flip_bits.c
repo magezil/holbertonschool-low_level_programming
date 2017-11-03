@@ -17,9 +17,8 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	count = 0;
 	while (mask > 0)
 	{
-		/* check if last digit is 1 */
-		if (mask & 1)
-			count++;
+		/* add 1 if last bit is 1, 0 if last bit is 0 */
+		count += (mask & 1);
 		mask = mask >> 1;
 	}
 	return (count);
