@@ -9,6 +9,9 @@
 ### 1-create_file.c
 * Function that creates a file
 * Prototype: `int create_file(const char *filename, char *text_content);`
+...* `filename`: name of file to create
+...* `text_content`: string to write to file (terminated by NULL)
+* Return: 1 on success, -1 on failure
 
 ### 2-append_text_to_file.c
 * Function that appends text to end of a file
