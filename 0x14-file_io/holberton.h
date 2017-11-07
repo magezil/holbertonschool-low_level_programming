@@ -1,6 +1,8 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
+#include <stdlib.h>
+
 #include <unistd.h>
 
 #include <sys/types.h>

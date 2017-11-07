@@ -4,6 +4,7 @@
 ### 0-read_textfile.c
 * Function that reads a text file and prints it to POSIX standard output
 * Prototype: `ssize_t read_textfile(const char *filename, size_t letters);`
+* Return: number of letters read and printed, 0 if fail
 
 ### 1-create_file.c
 * Function that creates a file
