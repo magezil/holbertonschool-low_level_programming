@@ -29,33 +29,12 @@ int main(int ac, char **av)
 		read_check(fd0, fd1, num_read, av[1]);
 		buff[num_read] = '\0';
 		num_write = write(fd1, buff, num_read);
-		while (num_write != -1 && num_read != num_write)
-			num_write += write(fd1, buff + num_write, num_read - num_write);
+		if (num_read != num_write)
+			num_write = -1;
 		write_check(fd0, fd1, num_write, av[2]);
 	}
 	close_all(fd0, fd1);
 	return (0);
-}
-
-/**
- * _strcmp - compare two strings
- * @s1: first string to compare
- * @s2: second string to compare
- *
- * Return: negative number if s1 is less than s2
- *         positive number if s1 is greater than s2
- *         0 if s1 matches s2
- */
-int _strcmp(char *s1, char *s2)
-{
-        while (*s1 != '\0' && *s2 != '\0')
-	{
-		if (*s1 != *s2)
-			break;
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
 }
 
 /**
@@ -76,11 +55,6 @@ void open_all(int *fd0, int *fd1, char *file_s, char *file_d)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_s);
 		exit(98);
-	}
-	if (_strcmp(file_s, file_d) == 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_d);
-		exit(99);
 	}
 	*fd0 = open(file_s, O_RDONLY);
 	if (*fd0 == -1)
@@ -142,12 +116,12 @@ void close_all(int fd0, int fd1)
 	fd1 = close(fd1);
 	if (fd0 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd0);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd0);
 		exit(100);
 	}
 	if (fd1 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd1);
 		exit(100);
 	}
 }
