@@ -14,7 +14,7 @@
 int main(int ac, char **av)
 {
 	char buff[BUFF_SIZE];
-	int fd0, fd1, num_read, num_write;
+	int fd0, fd1, num_read, num_write, close_flag0, close_flag1;
 	mode_t mode;
 
 	if (ac != 3) /* check number of arguments */
@@ -34,10 +34,10 @@ int main(int ac, char **av)
 			num_write = -1;
 		write_check(fd0, fd1, num_write, av[2]);
 	}
-	fd0 = close(fd0);
-	close_check(fd0);
-	fd1 = close(fd1);
-	close_check(fd1);
+	close_flag0 = close(fd0);
+	close_flag1 = close(fd1);
+	close_check(fd0, close_flag0);
+	close_check(fd1, close_flag1);
 	return (0);
 }
 
@@ -102,10 +102,11 @@ void read_check(int fd0, int fd1, int flag, char *filename)
 /**
  * close_check - check if close file success
  * @fd: first file to close
+ * @close_flag: check if close was successful
  */
-void close_check(int fd)
+void close_check(int fd, int close_flag)
 {
-	if (fd == -1)
+	if (close_flag == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd);
 		exit(100);

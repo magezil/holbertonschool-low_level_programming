@@ -22,6 +22,6 @@ unsigned int _strlen(char *s);
 void open_check(int fd0, int fd1, char *file_s);
 void write_check(int fd0, int fd1, int flag, char *filename);
 void read_check(int fd0, int fd1, int flag, char *filename);
-void close_check(int fd0);
+void close_check(int fd0, int close_flag);
 
 #endif /* HOLBERTON_H */
