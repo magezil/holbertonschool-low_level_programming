@@ -18,8 +18,10 @@
 ### 2-append_text_to_file.c
 * Function that appends text to end of a file
 * Prototype: `int append_text_to_file(const char *filename, char *text_content);`
+  * `filename`: name of file to append to
+  * `text_content`: string to append to file (terminated by NULL)
+* Return: 1 on success, -1 on failure
 
 ### 3-cp.c
 * Program that copies the content of one file into another file
-* Usage:
-`./cp file_source file_destination`
+* Usage: `./cp file_source file_destination`
