@@ -2,7 +2,7 @@
 
 ## Introduction to File I/O
 ### 0-read_textfile.c
-* Function that reads a text file and prints it to POSIX standard output
+* Function that reads a text file and prints it to `POSIX` standard output
 * Prototype: `ssize_t read_textfile(const char *filename, size_t letters);`
   * `filename`: name of file to create
   * `letters`: number of letters to print
