@@ -21,31 +21,54 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	fd0 = open(av[1], O_RDONLY);
-	read_check(fd0, av[1]);
-	fd1 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	write_check(fd1, av[2]);
+	open_all(&fd0, &fd1, av[1], av[2]);
 	num_read = BUFF_SIZE;
 	while (num_read != 0) /* read file until end of file */
 	{
 		num_read = read(fd0, buff, BUFF_SIZE);
-		read_check(num_read, av[1]);
+		read_check(fd0, fd1, num_read, av[1]);
 		num_write = write(fd1, buff, num_read);
-		write_check(num_write, av[2]);
+		write_check(fd0, fd1, num_write, av[2]);
 	}
 	close_all(fd0, fd1);
 	return (0);
 }
 
 /**
+ * open_all - check if open file_source and file_destination
+ * @fd0: file_source
+ * @fd1: file_destination
+ * @file_s: name of file_source
+ * @file_d: name of file_destination
+ */
+void open_all(int *fd0, int *fd1, char *file_s, char *file_d)
+{
+	*fd0 = open(file_s, O_RDONLY);
+	*fd1 = open(file_d, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	if (*fd0 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_s);
+		exit(98);
+	}
+	if (*fd1 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_d);
+		exit(99);
+	}
+}
+
+/**
  * write_check - check if file_destination can be opened and written
- * @fd: file descriptor
+ * @fd0: file_source
+ * @fd1: file_destination
+ * @flag: determines whether write was success or not
  * @filename: name of file to write
  */
-void write_check(int fd, char *filename)
+void write_check(int fd0, int fd1, int flag, char *filename)
 {
-	if (fd == -1)
+	if (flag == -1)
 	{
+		close_all(fd0, fd1);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 		exit(99);
 	}
@@ -56,10 +79,11 @@ void write_check(int fd, char *filename)
  * @fd: file descriptor
  * @filename: name of file to read
  */
-void read_check(int fd, char *filename)
+void read_check(int fd0, int fd1, int flag, char *filename)
 {
-	if (fd == -1)
+	if (flag == -1)
 	{
+		close_all(fd0, fd1);
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
