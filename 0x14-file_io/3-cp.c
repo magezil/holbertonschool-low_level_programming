@@ -45,6 +45,8 @@ int main(int ac, char **av)
  */
 void open_all(int *fd0, int *fd1, char *file_s, char *file_d)
 {
+	mode_t mode;
+
 	if (fd1 == NULL || file_d == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_d);
@@ -61,7 +63,8 @@ void open_all(int *fd0, int *fd1, char *file_s, char *file_d)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_s);
 		exit(98);
 	}
-	*fd1 = open(file_d, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+	*fd1 = open(file_d, O_WRONLY | O_CREAT | O_TRUNC, mode);
 	if (*fd1 == -1)
 	{
 		close(*fd0);
