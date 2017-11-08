@@ -24,7 +24,7 @@ int main(int ac, char **av)
 	fd0 = open(av[1], O_RDONLY);
 	read_check(fd0, av[1]);
 	fd1 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	write_check(fd0, av[2]);
+	write_check(fd1, av[2]);
 	num_read = BUFF_SIZE;
 	while (num_read != 0) /* read file until end of file */
 	{
