@@ -23,7 +23,7 @@ int main(int ac, char **av)
 	}
 	open_all(&fd0, &fd1, av[1], av[2]);
 	num_read = BUFF_SIZE;
-	while (num_read > 0) /* read file until end of file */
+	while (num_read == BUFF_SIZE) /* read file until end of file */
 	{
 		num_read = read(fd0, buff, BUFF_SIZE);
 		read_check(fd0, fd1, num_read, av[1]);
