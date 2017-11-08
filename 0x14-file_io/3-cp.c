@@ -30,7 +30,7 @@ int main(int ac, char **av)
 		buff[num_read] = '\0';
 		num_write = write(fd1, buff, num_read);
 		while (num_write != -1 && num_read != num_write)
-			num_write += write(fd1, buff, num_read - num_write);
+			num_write += write(fd1, buff + num_write, num_read - num_write);
 		write_check(fd0, fd1, num_write, av[2]);
 	}
 	close_all(fd0, fd1);
