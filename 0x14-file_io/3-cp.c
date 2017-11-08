@@ -76,7 +76,9 @@ void write_check(int fd0, int fd1, int flag, char *filename)
 
 /**
  * read_check - check if file_source can be opened and read
- * @fd: file descriptor
+ * @fd0: file_source
+ * @fd1: file_destination
+ * @flag: determines whether write was success or not
  * @filename: name of file to read
  */
 void read_check(int fd0, int fd1, int flag, char *filename)
