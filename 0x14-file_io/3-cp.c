@@ -65,6 +65,7 @@ void open_all(int *fd0, int *fd1, char *file_s, char *file_d)
 	*fd1 = open(file_d, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (*fd1 == -1)
 	{
+		close(*fd0);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_d);
 		exit(99);
 	}
