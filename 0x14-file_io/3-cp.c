@@ -23,7 +23,7 @@ int main(int ac, char **av)
 	}
 	open_all(&fd0, &fd1, av[1], av[2]);
 	num_read = BUFF_SIZE;
-	while (num_read != 0) /* read file until end of file */
+	while (num_read > 0) /* read file until end of file */
 	{
 		num_read = read(fd0, buff, BUFF_SIZE);
 		read_check(fd0, fd1, num_read, av[1]);
@@ -35,6 +35,27 @@ int main(int ac, char **av)
 	}
 	close_all(fd0, fd1);
 	return (0);
+}
+
+/**
+ * _strcmp - compare two strings
+ * @s1: first string to compare
+ * @s2: second string to compare
+ *
+ * Return: negative number if s1 is less than s2
+ *         positive number if s1 is greater than s2
+ *         0 if s1 matches s2
+ */
+int _strcmp(char *s1, char *s2)
+{
+        while (*s1 != '\0' && *s2 != '\0')
+	{
+		if (*s1 != *s2)
+			break;
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }
 
 /**
@@ -55,6 +76,11 @@ void open_all(int *fd0, int *fd1, char *file_s, char *file_d)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_s);
 		exit(98);
+	}
+	if (_strcmp(file_s, file_d) == 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_d);
+		exit(99);
 	}
 	*fd0 = open(file_s, O_RDONLY);
 	if (*fd0 == -1)

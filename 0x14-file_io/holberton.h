@@ -23,5 +23,6 @@ void open_all(int *fd0, int *fd1, char *file_s, char *file_d);
 void write_check(int fd0, int fd1, int flag, char *filename);
 void read_check(int fd0, int fd1, int flag, char *filename);
 void close_all(int fd0, int fd1);
+int _strcmp(char *s1, char *s2);
 
 #endif /* HOLBERTON_H */
