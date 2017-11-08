@@ -13,15 +13,17 @@
  */
 int main(int ac, char **av)
 {
-	int fd0, fd1, num_read, num_write;
 	char buff[BUFF_SIZE];
+	int fd0, fd1, num_read, num_write;
+	mode_t mode;
 
 	if (ac != 3) /* check number of arguments */
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-	open_all(&fd0, &fd1, av[1], av[2]);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
+	fd0 = open(av[1], O_RDONLY);
+	open_check(fd0, 0, av[1]);
+	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+	fd1 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
+	open_check(fd0, fd1, av[2]);
 	num_read = BUFF_SIZE;
 	while (num_read == BUFF_SIZE) /* read file until end of file */
 	{
@@ -32,43 +34,31 @@ int main(int ac, char **av)
 			num_write = -1;
 		write_check(fd0, fd1, num_write, av[2]);
 	}
-	close_all(fd0, fd1);
+	fd0 = close(fd0);
+	close_check(fd0);
+	fd1 = close(fd1);
+	close_check(fd1);
 	return (0);
 }
 
 /**
- * open_all - check if open file_source and file_destination
+ * open_check - check if open file
  * @fd0: file_source
  * @fd1: file_destination
- * @file_s: name of file_source
- * @file_d: name of file_destination
+ * @file_s: name of file
  */
-void open_all(int *fd0, int *fd1, char *file_s, char *file_d)
+void open_check(int fd0, int fd1, char *file_s)
 {
-	mode_t mode;
-
-	if (fd1 == NULL || file_d == NULL)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_d);
-		exit(99);
-	}
-	if (fd0 == NULL || file_s == NULL)
+	if (fd0 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_s);
 		exit(98);
 	}
-	*fd0 = open(file_s, O_RDONLY);
-	if (*fd0 == -1)
+	if (fd1 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_s);
-		exit(98);
-	}
-	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
-	*fd1 = open(file_d, O_WRONLY | O_CREAT | O_TRUNC, mode);
-	if (*fd1 == -1)
-	{
-		close(*fd0);
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_d);
+		if (fd0 != -1)
+			close(fd0);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_s);
 		exit(99);
 	}
 }
@@ -110,22 +100,14 @@ void read_check(int fd0, int fd1, int flag, char *filename)
 }
 
 /**
- * close_all - close all files
- * @fd0: first file to close
- * @fd1: second file to close
+ * close_check - check if close file success
+ * @fd: first file to close
  */
-void close_all(int fd0, int fd1)
+void close_check(int fd)
 {
-	fd0 = close(fd0);
-	fd1 = close(fd1);
-	if (fd0 == -1)
+	if (fd == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd0);
-		exit(100);
-	}
-	if (fd1 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd1);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd);
 		exit(100);
 	}
 }

@@ -19,9 +19,9 @@ int append_text_to_file(const char *filename, char *text_content);
 
 /* helper functions */
 unsigned int _strlen(char *s);
-void open_all(int *fd0, int *fd1, char *file_s, char *file_d);
+void open_check(int fd0, int fd1, char *file_s);
 void write_check(int fd0, int fd1, int flag, char *filename);
 void read_check(int fd0, int fd1, int flag, char *filename);
-void close_all(int fd0, int fd1);
+void close_check(int fd0);
 
 #endif /* HOLBERTON_H */
