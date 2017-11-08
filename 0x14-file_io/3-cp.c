@@ -44,27 +44,27 @@ int main(int ac, char **av)
  */
 void open_all(int *fd0, int *fd1, char *file_s, char *file_d)
 {
-	if (fd0 == NULL || file_s == NULL)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_s);
-		exit(98);
-	}
 	if (fd1 == NULL || file_d == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_d);
 		exit(99);
 	}
-	*fd0 = open(file_s, O_RDONLY);
-	*fd1 = open(file_d, O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (*fd0 == -1)
+	if (fd0 == NULL || file_s == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_s);
 		exit(98);
 	}
+	*fd0 = open(file_s, O_RDONLY);
+	*fd1 = open(file_d, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (*fd1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_d);
 		exit(99);
+	}
+	if (*fd0 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_s);
+		exit(98);
 	}
 }
 
