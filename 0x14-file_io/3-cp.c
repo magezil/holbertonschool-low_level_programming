@@ -14,7 +14,7 @@
 int main(int ac, char **av)
 {
 	int fd0, fd1, num_read, num_write;
-	char buff[BUFF_SIZE + 1];
+	char buff[BUFF_SIZE];
 
 	if (ac != 3) /* check number of arguments */
 	{
@@ -27,7 +27,6 @@ int main(int ac, char **av)
 	{
 		num_read = read(fd0, buff, BUFF_SIZE);
 		read_check(fd0, fd1, num_read, av[1]);
-		buff[num_read] = '\0';
 		num_write = write(fd1, buff, num_read);
 		if (num_read != num_write)
 			num_write = -1;
@@ -82,7 +81,8 @@ void write_check(int fd0, int fd1, int flag, char *filename)
 {
 	if (flag == -1)
 	{
-		close_all(fd0, fd1);
+		close(fd0);
+		close(fd1);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 		exit(99);
 	}
@@ -99,7 +99,8 @@ void read_check(int fd0, int fd1, int flag, char *filename)
 {
 	if (flag == -1)
 	{
-		close_all(fd0, fd1);
+		close(fd0);
+		close(fd1);
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 		exit(98);
 	}
