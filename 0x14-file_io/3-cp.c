@@ -1,7 +1,4 @@
-#include <stdio.h>
 #include "holberton.h"
-
-#define BUFF_SIZE 1024
 
 /**
  * main - copy the content of one file into another
