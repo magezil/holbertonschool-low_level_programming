@@ -16,8 +16,8 @@ int main(int ac, char **av)
 	int fd, num_read, i;
 	char buff[BUFF_SIZE];
 	char elf[] = {0x7f, 0x45, 0x4c, 0x46, 0x0};
-/*	struct Elf32_Ehdr head;
-*/
+	struct Elf32_Ehdr *head;
+
 	if (ac != 2)
 		dprintf(STDERR_FILENO, "Usage: elf_header elf_file\n"), exit(98);
 	fd = open(av[1], O_RDONLY);
@@ -26,13 +26,16 @@ int main(int ac, char **av)
 	num_read = read(fd, buff, BUFF_SIZE);
 	if (num_read == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
+	head = (Elf32_Ehdr *)buff;
 	buff[num_read] = '\0';
 	if (cmp(elf, buff) == 0)
-/*	if (e_indent[0] == 0x7f &&
-		e_indent[1] == 'E' &&
-		e_indent[2] == 'L' &&
-		e_indent[3] == 'F')
-*/	{
+	{
+/*
+*	if (head->e_indent[0] == 0x7f &&
+*		head->e_indent[1] == 'E' &&
+*		head->e_indent[2] == 'L' &&
+*		head->e_indent[3] == 'F')
+*/
 		printf("ELF\n");
 		printf("Magic:\t");
 		for (i = 0; i < 15; i++)
@@ -41,6 +44,8 @@ int main(int ac, char **av)
 	}
 	else
 		dprintf(STDERR_FILENO, "Error: Not an ELF file %s\n", av[1]), exit(98);
+	if (close(fd) == -1)
+		dprintf(STDERR_FILENO, "Error: Cannot close file %s\n", av[1]), exit(98);
 	return (0);
 }
 
