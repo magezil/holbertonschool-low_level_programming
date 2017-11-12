@@ -28,7 +28,7 @@ int main(int ac, char **av)
 	{
 		printf("ELF Header:\n");
 		printf("  Magic:   ");
-		for (i = 0; i < 15; i++)
+		for (i = 0; i < 16; i++)
 			printf("%02x ", buff[i]);
 		printf("\n");
 		printf("  Class:                             ");
