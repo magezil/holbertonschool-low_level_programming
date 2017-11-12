@@ -31,5 +31,10 @@ void open_check(int fd0, int fd1, char *file_s);
 void write_check(int fd0, int fd1, int flag, char *filename);
 void read_check(int fd0, int fd1, int flag, char *filename);
 void close_check(int fd0, int close_flag);
+void print_class(unsigned int);
+void print_data(unsigned int);
+void print_version(unsigned int);
+void print_obsabi(unsigned int);
+void print_type(unsigned int);
 
 #endif /* HOLBERTON_H */

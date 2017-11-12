@@ -1,8 +1,6 @@
 #include <elf.h>
 #include "holberton.h"
 
-int cmp(char *s1, char *s2);
-
 /**
  * main - displays information contained in the ELF header of ELF file
  * @ac: number of arguments
@@ -14,31 +12,38 @@ int cmp(char *s1, char *s2);
 int main(int ac, char **av)
 {
 	int fd, num_read, i;
-	char buff[BUFF_SIZE];
-	char elf[] = {0x7f, 0x45, 0x4c, 0x46, 0x0};
+	unsigned char *buff;
+	Elf64_Ehdr head;
 
 	if (ac != 2)
 		dprintf(STDERR_FILENO, "Usage: elf_header elf_file\n"), exit(98);
 	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
-	num_read = read(fd, buff, BUFF_SIZE);
+	num_read = read(fd, &head, sizeof(Elf64_Ehdr));
 	if (num_read == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
-	buff[num_read] = '\0';
-	if (cmp(elf, buff) == 0)
+	buff = head.e_ident;
+	if (buff[0] == 0x7f && buff[1] == 'E' && buff[2] == 'L' && buff[3] == 'F')
 	{
-/*
-*	if (head->e_indent[0] == 0x7f &&
-*		head->e_indent[1] == 'E' &&
-*		head->e_indent[2] == 'L' &&
-*		head->e_indent[3] == 'F')
-*/
-		printf("ELF\n");
-		printf("Magic:\t");
+		printf("ELF Header\n");
+		printf("\tMagic:\t");
 		for (i = 0; i < 15; i++)
 			printf("%02x ", buff[i]);
 		printf("\n");
+		printf("\tClass:\t\t\t\t");
+		print_class(head.e_ident[4]);
+		printf("\tData:\t\t\t\t");
+		print_data(head.e_ident[5]);
+		printf("\tVersion:\t\t\t");
+		print_version(head.e_ident[6]);
+		printf("\tOS/ABI:\t\t\t\t");
+		print_obsabi(head.e_ident[7]);
+		printf("\tABI Version:\t\t\t");
+		print_version(head.e_ident[8]);
+		printf("\tType:\t\t\t\t");
+		print_type(head.e_type);
+		printf("\tEntry point address:\t\t0x%x\n", (unsigned int)head.e_entry);
 	}
 	else
 		dprintf(STDERR_FILENO, "Error: Not an ELF file %s\n", av[1]), exit(98);
@@ -48,22 +53,119 @@ int main(int ac, char **av)
 }
 
 /**
- * cmp - function checks if strings are the same
- * @s1: string 1
- * @s2: string 2
- *
- * Return: 0 if they are the same, 1 if not, -1 if error
+ * print_class - prints ELF class
+ * @id: identifier to print
  */
-int cmp(char *s1, char *s2)
+void print_class(unsigned int id)
 {
-	if (s1 == NULL || s2 == NULL)
-		return (-1);
-	while (*s1 != '\0' && *s2 != '\0')
+	switch (id)
 	{
-		if (*s1 != *s2)
-			return (1);
-		s1++;
-		s2++;
+	case 1:
+		printf("ELF32\n");
+		break;
+	case 2:
+		printf("ELF64\n");
+		break;
+	default:
+		printf("Invalid\n");
+		break;
 	}
-	return (0);
+}
+
+/**
+ * print_data - prints ELF data
+ * @id: identifier to print
+ */
+void print_data(unsigned int id)
+{
+	switch (id)
+	{
+	case 1:
+		printf("2's complement, little endian\n");
+		break;
+	case 2:
+		printf("2's complement, big endian\n");
+		break;
+	default:
+		printf("Unknown\n");
+		break;
+	}
+}
+
+/**
+ * print_version - prints ELF file version
+ * @id: identifier to print
+ */
+void print_version(unsigned int id)
+{
+	if (id == 1)
+		printf("1 (current)\n");
+	else
+		printf("Invalid\n");
+}
+
+/**
+ * print_obsabi - prints ELF file OBS/ABI
+ * @id: identifier to print
+ */
+void print_obsabi(unsigned int id)
+{
+	switch (id)
+	{
+	case 1:
+		printf("UNIX - System V\n");
+		break;
+	case 2:
+		printf("UNIX - HP-UX\n");
+		break;
+	case 3:
+		printf("UNIX - NetBSD\n");
+		break;
+	case 4:
+		printf("UNIX - Linux\n");
+		break;
+	case 5:
+		printf("UNIX - Solaris\n");
+		break;
+	case 6:
+		printf("UNIX - IRIX\n");
+		break;
+	case 7:
+		printf("UNIX - FreeBSD\n");
+		break;
+	case 8:
+		printf("UNIX - TRU64\n");
+		break;
+	case 9:
+		printf("UNIX - ARM architecture\n");
+		break;
+	default:
+		printf("UNIX - System V\n");
+		break;
+	}
+}
+/**
+ * print_type - prints ELF file type
+ * @id: identifier to print
+ */
+void print_type(unsigned int id)
+{
+	switch (id)
+	{
+	case 1:
+		printf("REL (Relocatable file)\n");
+		break;
+	case 2:
+		printf("EXEC (Executable file)\n");
+		break;
+	case 3:
+		printf("DYN (Shared object file)\n");
+		break;
+	case 4:
+		printf("CORE (Core file)\n");
+		break;
+	default:
+		printf("Unknown\n");
+		break;
+	}
 }
