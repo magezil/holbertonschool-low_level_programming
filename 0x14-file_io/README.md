@@ -25,3 +25,7 @@
 ### 3-cp.c
 * Program that copies the content of one file into another file
 * Usage: `./cp file_source file_destination`
+
+### 100-elf_header.c
+* Program that displays the information contained in an `ELF` header file
+* Usage: `./elf_header elf_file`
