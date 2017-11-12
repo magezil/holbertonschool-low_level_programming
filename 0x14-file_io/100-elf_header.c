@@ -42,8 +42,7 @@ int main(int ac, char **av)
 		printf("  ABI Version:                       %u\n", head.e_ident[8]);
 		printf("  Type:                              ");
 		print_type(head.e_type);
-		printf("  Entry point address:               0x");
-		printf("%x\n", (unsigned int)head.e_entry);
+		printf("  Entry point address:               %p\n", (void *)head.e_entry);
 	}
 	else
 		dprintf(STDERR_FILENO, "Error: Not an ELF file %s\n", av[1]), exit(98);
