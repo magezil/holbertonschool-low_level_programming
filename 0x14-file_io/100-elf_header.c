@@ -26,24 +26,23 @@ int main(int ac, char **av)
 	buff = head.e_ident;
 	if (buff[0] == 0x7f && buff[1] == 'E' && buff[2] == 'L' && buff[3] == 'F')
 	{
-		printf("ELF Header\n");
-		printf("\tMagic:\t");
+		printf("ELF Header:\n");
+		printf("  Magic:   ");
 		for (i = 0; i < 15; i++)
 			printf("%02x ", buff[i]);
 		printf("\n");
-		printf("\tClass:\t\t\t\t");
+		printf("  Class:                             ");
 		print_class(head.e_ident[4]);
-		printf("\tData:\t\t\t\t");
+		printf("  Data:                              ");
 		print_data(head.e_ident[5]);
-		printf("\tVersion:\t\t\t");
+		printf("  Version:                           ");
 		print_version(head.e_ident[6]);
-		printf("\tOS/ABI:\t\t\t\t");
+		printf("  OS/ABI:                            ");
 		print_obsabi(head.e_ident[7]);
-		printf("\tABI Version:\t\t\t");
-		print_version(head.e_ident[8]);
-		printf("\tType:\t\t\t\t");
+		printf("  ABI Version:                       %u\n", head.e_ident[8]);
+		printf("  Type:                              ");
 		print_type(head.e_type);
-		printf("\tEntry point address:\t\t0x%x\n", (unsigned int)head.e_entry);
+		printf("  Entry point address:               0x%x\n", (unsigned int)head.e_entry);
 	}
 	else
 		dprintf(STDERR_FILENO, "Error: Not an ELF file %s\n", av[1]), exit(98);
@@ -144,6 +143,7 @@ void print_obsabi(unsigned int id)
 		break;
 	}
 }
+
 /**
  * print_type - prints ELF file type
  * @id: identifier to print
