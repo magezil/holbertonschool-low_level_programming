@@ -115,19 +115,19 @@ void print_obsabi(unsigned int id)
 		printf("UNIX - System V\n");
 		break;
 	case 2:
-		printf("UNIX - HP-UX\n");
+		printf("UNIX - NetBSD\n");
 		break;
 	case 3:
-		printf("UNIX - NetBSD\n");
+		printf("UNIX - HP-UX\n");
 		break;
 	case 4:
 		printf("UNIX - Linux\n");
 		break;
 	case 5:
-		printf("UNIX - Solaris\n");
+		printf("UNIX - IRIX\n");
 		break;
 	case 6:
-		printf("UNIX - IRIX\n");
+		printf("UNIX - Solaris\n");
 		break;
 	case 7:
 		printf("UNIX - FreeBSD\n");
@@ -139,7 +139,7 @@ void print_obsabi(unsigned int id)
 		printf("UNIX - ARM architecture\n");
 		break;
 	default:
-		printf("UNIX - System V\n");
+		printf("\n");
 		break;
 	}
 }
