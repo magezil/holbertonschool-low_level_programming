@@ -16,7 +16,6 @@ int main(int ac, char **av)
 	int fd, num_read, i;
 	char buff[BUFF_SIZE];
 	char elf[] = {0x7f, 0x45, 0x4c, 0x46, 0x0};
-	struct Elf32_Ehdr *head;
 
 	if (ac != 2)
 		dprintf(STDERR_FILENO, "Usage: elf_header elf_file\n"), exit(98);
@@ -26,7 +25,6 @@ int main(int ac, char **av)
 	num_read = read(fd, buff, BUFF_SIZE);
 	if (num_read == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
-	head = (Elf32_Ehdr *)buff;
 	buff[num_read] = '\0';
 	if (cmp(elf, buff) == 0)
 	{
