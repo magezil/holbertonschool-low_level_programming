@@ -32,3 +32,8 @@
 * Returns the `n`th node of a `dlistint_t` list
 * Prototype: `dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);`
 * Return: address of `n`th node or `NULL` if does not exist
+
+### 6-sum_dlistint.c
+* Computes the sum of elements in `dlistint_t` list
+* Prototype: `int sum_dlistint(dlistint_t *head);`
+* Return: sum of elements in list, `0` if list is empty
