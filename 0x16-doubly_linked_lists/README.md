@@ -7,3 +7,9 @@
 ### 0-print_dlistint.c
 * Prints a doubly linked list
 * Prototype: `size_t print_dlistint(const dlistint_t *h);`
+* Return: number of nodes
+
+### 
+* Counts the number of nodes in a doubly linked list
+* Prototype
+* Return: number of nodes
