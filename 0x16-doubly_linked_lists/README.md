@@ -42,3 +42,8 @@
 * Inserts a new node at a given position
 * Prototype: `dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);`
 * Return: address of new node or `NULL` if fail
+
+### 8-delete_dnodeint.c
+* Delete node at a given position
+* Prototype: `int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);`
+* Return: `1` if success, `-1` if fail
