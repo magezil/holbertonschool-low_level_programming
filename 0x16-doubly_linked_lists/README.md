@@ -37,3 +37,8 @@
 * Computes the sum of elements in `dlistint_t` list
 * Prototype: `int sum_dlistint(dlistint_t *head);`
 * Return: sum of elements in list, `0` if list is empty
+
+### 7-insert_dnodeint.c
+* Inserts a new node at a given position
+* Prototype: `dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);`
+* Return: address of new node or `NULL` if fail
