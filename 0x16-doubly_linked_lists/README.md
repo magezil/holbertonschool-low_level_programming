@@ -23,3 +23,7 @@
 * Adds a new node at the end of a `dlistint_t` list
 * Prototype: `dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);`
 * Return: address of new element or `NULL` if fail
+
+### 4-free_dlistint.c
+* Free a `dlistint_t` list
+* Prototype: `void free_dlistint(dlistint_t *head);`
