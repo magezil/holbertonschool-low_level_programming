@@ -11,7 +11,7 @@
 
 ### 1-dlistint_len.c
 * Counts the number of nodes in a `dlistint_t` list
-* Prototype: `dlistint_t *add_dnodeint(dlistint_t **head, const int n);`
+* Prototype: `size_t dlistint_len(const dlistint_t *h);`
 * Return: number of nodes
 
 ### 2-add_dnodeint.c
@@ -27,3 +27,8 @@
 ### 4-free_dlistint.c
 * Free a `dlistint_t` list
 * Prototype: `void free_dlistint(dlistint_t *head);`
+
+### 5-get_dnodeint.c
+* Returns the `n`th node of a `dlistint_t` list
+* Prototype: `dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);`
+* Return: address of `n`th node or `NULL` if does not exist
