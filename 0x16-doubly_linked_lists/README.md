@@ -47,3 +47,12 @@
 * Delete node at a given position
 * Prototype: `int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);`
 * Return: `1` if success, `-1` if fail
+
+### 100-password
+* Contains password for crackme
+
+### 102-result
+* Contains the largest palindrome from the product of two 3-digit numbers
+
+### 103-keygen.c
+* Keygen for crackme
