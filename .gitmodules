@@ -1,3 +1,6 @@
 [submodule "0x18-stacks_queues_lifo_fifo/monty"]
 	path = 0x18-stacks_queues_lifo_fifo/monty
 	url = https://github.com/magezil/monty
+[submodule "holbertonschool-low_level_programming/0x18-stacks_queues_lifo_fifo"]
+	path = holbertonschool-low_level_programming/0x18-stacks_queues_lifo_fifo
+	url = https://github.com/magezil/monty
