@@ -1,3 +1,9 @@
 [submodule "0x18-stacks_queues_lifo_fifo"]
 	path = 0x18-stacks_queues_lifo_fifo
 	url = https://github.com/magezil/monty
+[submodule "0x10-printf"]
+	path = 0x10-printf
+	url = https://github.com/magezil/printf
+[submodule "0x15-simple_shell"]
+	path = 0x15-simple_shell
+	url = https://github.com/magezil/simple_shell
