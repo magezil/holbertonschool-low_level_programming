@@ -16,7 +16,12 @@
 0x0D-structures_typedef - Introduction to structures  
 0x0E-function_pointers - Introduction to pointers to functions  
 0x0F-variadic_functions - Introduction to variadic functions  
+0x10-printf - printf function  
 0x11-singly_linked_lists - Introduction to linked lists  
 0x12-more_singly_linked_lists - More linked lists  
 0x13-bit_manipulation - Introduction to bit manipulation  
-0x14-file_io - Introduction to file i/o
+0x14-file_io - Introduction to file i/o  
+0x15-simple_shell - A simple shell  
+0x16-doubly_linked_lists - Doubly linked lists  
+0x17-dynamic_libraries - Introduction to dynamic libraries  
+0x18-stacks_queues_lifo_fifo - Stacks and Queues in C
