@@ -25,3 +25,7 @@
 * Retrieves a value associated with a key
 * Prototype: `char *hash_table_get(const hash_table_t *ht, const char *key);`
 
+### 5-hash_table_print.c
+* Prints a hash table
+* Prototype: `void hash_table_print(const hash_table_t *ht);`
+
