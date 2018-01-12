@@ -4,8 +4,10 @@
  * key_index - gives index of a key based on hash value
  * @key: key to get index of
  * @size: size of array of hash table
+ *
+ * Return: index based on hash function of key
  */
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	return hash_djb2(key) % size;
+	return (hash_djb2(key) % size);
 }
