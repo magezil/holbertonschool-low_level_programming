@@ -16,13 +16,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new;
 	hash_node_t *current;
 
-	if (ht == NULL || key == NULL || value == NULL)
+	if (ht == NULL || key == NULL || value == NULL || strcmp(key, "") == 0)
 		return (0);
-	if (strcmp(key, "") == 0)
-		return (0);
-
 	index = key_index((unsigned char *)key, ht->size);
-	/* check if key already exists */
 	current = ht->array[index];
 	while (current != NULL)
 	{
@@ -37,25 +33,42 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		current = current->next;
 	}
-
-	/*if not do this: */
-	new = malloc(sizeof(hash_node_t));
+	new = node_create(key, value);
 	if (new == NULL)
 		return (0);
+	new->next = ht->array[index];
+	ht->array[index] = new;
+	return (1);
+}
+
+/**
+ * node_create - creates a new hash node
+ * @key: key to add
+ * @value: value to add
+ *
+ * Return: pointer to new node, or NULL if fail
+ */
+hash_node_t *node_create(const char *key, const char *value)
+{
+	hash_node_t *new;
+
+	if (key == NULL || value == NULL || strcmp(key, "") == 0)
+		return (NULL);
+	new = malloc(sizeof(hash_node_t));
+	if (new == NULL)
+		return (NULL);
 	new->key = strdup(key);
 	if (new->key == NULL)
 	{
 		free(new);
-		return (0);
+		return (NULL);
 	}
 	new->value = strdup(value);
 	if (new->value == NULL)
 	{
-		free((void *)key);
+		free(new->key);
 		free(new);
-		return (0);
+		return (NULL);
 	}
-	new->next = ht->array[index];
-	ht->array[index] = new;
-	return (1);
+	return (new);
 }
