@@ -1,6 +1,4 @@
 #include "hash_tables.h"
-#include <string.h>
-#include <stdio.h>
 
 /**
  * hash_table_set - adds an element to a hash table
@@ -19,8 +17,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht == NULL || key == NULL || value == NULL || strcmp(key, "") == 0)
 		return (0);
 	index = key_index((unsigned char *)key, ht->size);
-	current = ht->array[index];
-	while (current != NULL)
+	for (current = ht->array[index]; current != NULL; current = current->next)
 	{
 		if (strcmp(current->key, key) == 0)
 		{
@@ -31,7 +28,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			}
 			return (1);
 		}
-		current = current->next;
 	}
 	new = node_create(key, value);
 	if (new == NULL)
