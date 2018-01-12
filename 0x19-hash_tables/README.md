@@ -21,3 +21,7 @@
 * Prototype: `int hash_table_set(hash_table_t *ht, const char *key, const char *value);`
 * Return: 1 if success, 0 otherwise
 
+### 4-hash_table_get.c
+* Retrieves a value associated with a key
+* Prototype: `char *hash_table_get(const hash_table_t *ht, const char *key);`
+
