@@ -162,15 +162,15 @@ shash_node_t *snode_create(const char *key, const char *value)
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	shash_node_t *current;
+	unsigned long int index;
 
 	if (ht == NULL || key == NULL || strcmp(key, "") == 0)
 		return (NULL);
-	current = ht->shead;
-	while (current != NULL && strcmp(current->key, key) < 0)
+	index = key_index((unsigned char *)key, ht->size);
+	for (current = ht->array[index]; current != NULL; current = current->next)
 	{
 		if (strcmp(current->key, key) == 0)
 			return (current->value);
-		current = current->snext;
 	}
 	return (NULL);
 }
