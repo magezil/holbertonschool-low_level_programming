@@ -12,3 +12,9 @@
 * Best case - list already sorted: O(n)
 * Average case: O(n^2)
 * Worst case - list reverse sorted: O(n^2)
+
+### 2-selection_sort.c, 2-O
+* Function implements selection sort algorithm
+* Best case: O(n^2)
+* Average case: O(n^2)
+* Worst case: O(n^2)
