@@ -8,6 +8,8 @@
  */
 void quick_sort(int *array, size_t size)
 {
+	if (array == NULL || *array == NULL)
+		return;
 	quick_recursive(array, 0, size - 1, size);
 }
 
