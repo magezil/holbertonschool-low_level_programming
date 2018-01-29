@@ -23,13 +23,15 @@ void quick_sort(int *array, size_t size)
  */
 void quick_recursive(int *array, size_t start, size_t pivot, size_t size)
 {
+	size_t p;
+
 	if (pivot == 0 || pivot <= start)
 		return;
-	pivot = partition(array, start, pivot, size);
-	if (pivot != 0 && pivot > start)
-		quick_recursive(array, start, pivot - 1, size);
-	if (pivot < size - 1)
-		quick_recursive(array, pivot + 1, size - 1, size);
+	p = partition(array, start, pivot, size);
+	if (p != 0 && p > start)
+		quick_recursive(array, start, p - 1, size);
+	if (p < size - 1)
+		quick_recursive(array, p + 1, pivot, size);
 }
 
 /**
