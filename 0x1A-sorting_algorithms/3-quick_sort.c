@@ -28,7 +28,7 @@ void quick_recursive(int *array, size_t start, size_t pivot, size_t size)
 	pivot = partition(array, start, pivot, size);
 	if (pivot != 0 && pivot > start + 1)
 		quick_recursive(array, start, pivot - 1, size);
-	if (pivot + 1 < size - 1)
+	if (pivot < size - 1)
 		quick_recursive(array, pivot + 1, size - 1, size);
 }
 
