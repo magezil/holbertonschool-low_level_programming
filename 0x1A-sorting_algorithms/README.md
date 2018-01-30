@@ -80,3 +80,9 @@
   * Insertion (worst case)
   * Deletion (best case)
   * Deletion (worst case)
+
+### 100-shell_sort.c
+* Function implements the shell sort algorithm on an array of numbers
+
+### 101-cocktail_sort_list.c, 101-O
+* Function implements cocktail sort on a doubly linked list
