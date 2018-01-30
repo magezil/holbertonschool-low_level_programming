@@ -13,7 +13,7 @@ void counting_sort(int *array, size_t size)
 	int *count, *new;
 	int counter, oc;
 
-	if (array == NULL)
+	if (array == NULL || size <= 1)
 		return;
 	new = malloc(sizeof(*array) * size);
 	if (new == NULL)
