@@ -86,3 +86,8 @@
 
 ### 101-cocktail_sort_list.c, 101-O
 * Function implements cocktail sort on a doubly linked list
+* Complexity is similar to bubble sort (since it is essentially doing bubble sort from both directions)
+
+### 102-counting_sort.c, 102-O
+* Function implements counting sort over an array of integers
+* Always O(n)
