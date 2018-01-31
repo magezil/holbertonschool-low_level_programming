@@ -91,3 +91,12 @@
 ### 102-counting_sort.c, 102-O
 * Function implements counting sort over an array of integers
 * Always O(n)
+
+### 103-merge_sort.c, 103-O
+* Function implements merge sort on an array of integers
+
+### 104-heap_sort.c, 104-O
+* Function implements heap sort on an array of integers
+
+### 105-radix_sort.c, 105-O
+* Function implements radix sort on an array of positive integers based on `LSD`

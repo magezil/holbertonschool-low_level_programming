@@ -37,6 +37,6 @@ void print_segment(int *array, char *side, size_t start, size_t end);
 void heap_sort(int *array, size_t size);
 void radix_sort(int *array, size_t size);
 char bucketize(int *array, size_t size, listint_t **buckets, int sig_dig);
-void listize(int *array, size_t size, listint_t **buckets);
+void listize(int *array, listint_t **buckets);
 
 #endif /* _SORT_H_ */
