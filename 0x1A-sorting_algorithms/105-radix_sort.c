@@ -15,7 +15,7 @@ void radix_sort(int *array, size_t size)
 	char success;
 	unsigned int sig_dig, max;
 
-	if (array == NULL)
+	if (array == NULL || size <= 1)
 		return;
 	for (i = 0; i < NUM_BUCKETS; i++)
 		buckets[i] = NULL;
