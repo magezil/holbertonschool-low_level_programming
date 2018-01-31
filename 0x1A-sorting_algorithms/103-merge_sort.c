@@ -13,11 +13,11 @@ void merge_sort(int *array, size_t size)
 
 	if (array == NULL || size <= 1)
 		return;
-	temp = malloc(sizeof(array));
+	temp = malloc(sizeof(array[0]) * size);
 	if (temp == NULL)
 		return;
 	merge_recursive(array, temp, 0, size);
-/*	free(temp);*/
+	free(temp);
 }
 
 /**
