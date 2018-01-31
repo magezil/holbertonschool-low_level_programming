@@ -73,7 +73,7 @@ int *create_counting(int size)
  *
  * Return: maximum value in array
  */
-int get_max(int *array, size_t size)
+unsigned int get_max(int *array, size_t size)
 {
 	int max_value;
 	size_t i;

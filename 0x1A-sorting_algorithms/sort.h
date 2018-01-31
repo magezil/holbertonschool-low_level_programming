@@ -30,8 +30,13 @@ void cocktail_sort_list(listint_t **list);
 char swap_nodes(listint_t **list, listint_t *first, listint_t *second);
 void counting_sort(int *array, size_t size);
 int *create_counting(int size);
+unsigned int get_max(int *array, size_t size);
 void merge_sort(int *array, size_t size);
 void merge_recursive(int *array, int *temp, size_t low, size_t high);
 void print_segment(int *array, char *side, size_t start, size_t end);
+void heap_sort(int *array, size_t size);
+void radix_sort(int *array, size_t size);
+char bucketize(int *array, size_t size, listint_t **buckets, int sig_dig);
+void listize(int *array, size_t size, listint_t **buckets);
 
 #endif /* _SORT_H_ */
