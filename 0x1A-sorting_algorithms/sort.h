@@ -42,5 +42,7 @@ void check_child(int *array, size_t size, size_t last, size_t node);
 void radix_sort(int *array, size_t size);
 char bucketize(int *array, size_t size, listint_t **buckets, int sig_dig);
 void listize(int *array, listint_t **buckets);
+void quick_sort_hoare(int *array, size_t size);
+size_t partition_hoare(int *array, size_t compare, size_t pivot, size_t size);
 
 #endif /* _SORT_H_ */
