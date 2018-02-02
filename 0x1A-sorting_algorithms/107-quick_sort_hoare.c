@@ -52,13 +52,19 @@ size_t partition_hoare(int *array, size_t compare, size_t pivot, size_t size)
 	j = pivot;
 	while (1)
 	{
-		while (i < pivot && array[i] <= array[pivot])
+		while (i < pivot && array[i] < array[pivot])
 			i++;
-		while (j >= i && array[j] > array[pivot])
+		while (j > i && array[j] > array[pivot])
 			j--;
 		if (i >= j)
 			return (j);
-		swap(array, size, i, j);
+		if (array[i] == array[j])
+		{
+			i++;
+			j--;
+		}
+		else
+			swap(array, size, i, j);
 	}
 }
 
