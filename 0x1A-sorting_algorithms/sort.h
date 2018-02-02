@@ -43,6 +43,7 @@ void radix_sort(int *array, size_t size);
 char bucketize(int *array, size_t size, listint_t **buckets, int sig_dig);
 void listize(int *array, listint_t **buckets);
 void quick_sort_hoare(int *array, size_t size);
+void quick_recursive_hoare(int *, size_t, size_t, size_t);
 size_t partition_hoare(int *array, size_t compare, size_t pivot, size_t size);
 
 #endif /* _SORT_H_ */
