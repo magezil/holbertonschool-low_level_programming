@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdio.h>
 
 /**
  * quick_sort_hoare - implement quick sort on an array
@@ -27,9 +28,10 @@ void quick_recursive_hoare(int *array, size_t start, size_t pivot, size_t size)
 
 	if (pivot == 0 || pivot <= start)
 		return;
+
 	p = partition_hoare(array, start, pivot, size);
-	if (p != 0 && p > start)
-		quick_recursive_hoare(array, start, p - 1, size);
+	if (p != 0 && (p > start && p < size))
+		quick_recursive_hoare(array, start, p, size);
 	if (p < size - 1)
 		quick_recursive_hoare(array, p + 1, pivot, size);
 }
@@ -39,32 +41,31 @@ void quick_recursive_hoare(int *array, size_t start, size_t pivot, size_t size)
  *
  * @array: array of integers to sort
  * @compare: index to compare against
- * @pivot: index for pivot
+ * @end: index for pivot
  * @size: size of array
  *
  * Return: pivot index
  */
-size_t partition_hoare(int *array, size_t compare, size_t pivot, size_t size)
+size_t partition_hoare(int *array, size_t compare, size_t end, size_t size)
 {
 	size_t i, j;
+	int pivot = array[end];
 
-	i = compare;
-	j = pivot;
+	i = compare - 1;
+	j = end + 1;
 	while (1)
 	{
-		while (i < pivot && array[i] < array[pivot])
+		do
 			i++;
-		while (j > i && array[j] > array[pivot])
+		while (i < size && array[i] < pivot);
+		do
 			j--;
-		if (i >= j)
+		while (j < size && array[j] > pivot);
+		if (i > j)
 			return (j);
-		if (array[i] == array[j])
-		{
-			i++;
-			j--;
-		}
-		else
-			swap(array, size, i, j);
+		if (i == j)
+			return (j - 1);
+		swap(array, size, i, j);
 	}
 }
 
