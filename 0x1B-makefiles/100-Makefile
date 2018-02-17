@@ -1,4 +1,3 @@
-include m.h
 CC=gcc
 SRC=holberton.c main.c
 OBJ=$(SRC:.c=.o)
@@ -18,3 +17,4 @@ re: oclean all
 
 $(NAME):$(OBJ)
 	$(CC) $(SRC) -o $(NAME)
+%.cc %.h:
