@@ -17,4 +17,3 @@ re: oclean all
 
 $(NAME):$(OBJ)
 	$(CC) $(SRC) -o $(NAME)
-%.cc %.h:
