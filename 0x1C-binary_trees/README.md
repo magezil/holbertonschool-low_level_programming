@@ -63,3 +63,7 @@
 * Calculate balance factor of tree
 * Prototype: `int binary_tree_balance(const binary_tree_t *tree);`
 
+### 15-binary_tree_is_full.c
+* Check if binary tree is full (all nodes either have 0 or 2 nodes)
+* Prototype: `int binary_tree_is_full(const binary_tree_t *tree);`
+
