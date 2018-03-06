@@ -67,3 +67,7 @@
 * Check if binary tree is full (all nodes either have 0 or 2 nodes)
 * Prototype: `int binary_tree_is_full(const binary_tree_t *tree);`
 
+### 16-binary_tree_is_perfect.c
+* Check if binary tree is perfect (fully filled)
+* Prototype: `int binary_tree_is_perfect(const binary_tree_t *tree);`
+
