@@ -31,3 +31,7 @@
 * Use pre-order traversal to go through tree and use given function on nodes
 * Prototype: `void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int));`
 
+### 7-binary_tree_inorder.c
+* Go through binary tree using in-order traversal and perform given function on nodes
+* Prototype: `void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int));`
+
