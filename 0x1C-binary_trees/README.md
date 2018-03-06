@@ -75,3 +75,7 @@
 * Find the sibling of a node
 * Prototype: `binary_tree_t *binary_tree_sibling(binary_tree_t *node);`
 
+### 18-binary_tree_uncle.c
+* Find the uncle of a node
+* Prototype: `binary_tree_t *binary_tree_uncle(binary_tree_t *node);`
+
