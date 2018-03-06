@@ -12,3 +12,6 @@
 ### 2-binary_tree_insert_right.c
 * Prototype: `binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);`
 
+### 3-binary_tree_delete.c
+* void binary_tree_delete(binary_tree_t *tree);
+
