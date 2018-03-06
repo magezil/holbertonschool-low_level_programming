@@ -59,3 +59,7 @@
 * Count number of nodes with at least 1 child
 * Prototype: `size_t binary_tree_nodes(const binary_tree_t *tree);`
 
+### 14-binary_tree_balance.c
+* Calculate balance factor of tree
+* Prototype: `int binary_tree_balance(const binary_tree_t *tree);`
+
