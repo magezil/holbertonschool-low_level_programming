@@ -23,3 +23,7 @@
 * Check if node is a leaf (no children)
 * Prototype: `int binary_tree_is_leaf(const binary_tree_t *node);`
 
+### 5-binary_tree_is_root.c
+* Check if given node is a root
+* Prototype: `int binary_tree_is_root(const binary_tree_t *node);`
+
