@@ -51,3 +51,7 @@
 * Measures the size of the tree
 * Prototype: `size_t binary_tree_size(const binary_tree_t *tree);`
 
+### 12-binary_tree_leaves.c
+* Counts number of leaves in binary tree
+* Prototype: `size_t binary_tree_leaves(const binary_tree_t *tree);`
+
