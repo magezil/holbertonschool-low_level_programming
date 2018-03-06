@@ -6,5 +6,6 @@
 * Prototype: `binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);`
 
 ### 1-binary_tree_insert_left.c
-* binary_tree_t `*binary_tree_insert_left(binary_tree_t *parent, int value);`
+* Create a new node and insert as left-child
+* Prototype: `binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);`
 
