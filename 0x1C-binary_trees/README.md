@@ -55,3 +55,7 @@
 * Counts number of leaves in binary tree
 * Prototype: `size_t binary_tree_leaves(const binary_tree_t *tree);`
 
+### 13-binary_tree_nodes.c
+* Count number of nodes with at least 1 child
+* Prototype: `size_t binary_tree_nodes(const binary_tree_t *tree);`
+
