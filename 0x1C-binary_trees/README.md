@@ -9,3 +9,6 @@
 * Create a new node and insert as left-child
 * Prototype: `binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);`
 
+### 2-binary_tree_insert_right.c
+* Prototype: `binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);`
+
