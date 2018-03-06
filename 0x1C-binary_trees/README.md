@@ -47,3 +47,7 @@
 * Measures the depth of a node in a binary tree
 * Prototype: `size_t binary_tree_depth(const binary_tree_t *node);`
 
+### 11-binary_tree_size.c
+* Measures the size of the tree
+* Prototype: `size_t binary_tree_size(const binary_tree_t *tree);`
+
