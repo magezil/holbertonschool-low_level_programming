@@ -24,6 +24,10 @@
 * Prototype: `int binary_tree_is_leaf(const binary_tree_t *node);`
 
 ### 5-binary_tree_is_root.c
-* Check if given node is a root
+* Check if given node is a root (no parent)
 * Prototype: `int binary_tree_is_root(const binary_tree_t *node);`
+
+### 6-binary_tree_preorder.c
+* Use pre-order traversal to go through tree and use given function on nodes
+* Prototype: `void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int));`
 
