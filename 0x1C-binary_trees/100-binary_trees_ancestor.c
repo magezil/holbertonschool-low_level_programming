@@ -7,7 +7,8 @@
  *
  * Return: pointer to lowest common ancestor or NULL if fail
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+		const binary_tree_t *second)
 {
 	if (first == NULL || second == NULL)
 		return (NULL);

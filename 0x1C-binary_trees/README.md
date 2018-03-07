@@ -83,3 +83,7 @@
 * Find lowest common ancestor of two nodes
 * Prototype: `binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);`
 
+### 101-binary_tree_levelorder.c
+* Traverses through tree using level order traversal
+* Prototype: `void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));`
+
