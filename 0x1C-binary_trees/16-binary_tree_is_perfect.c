@@ -10,43 +10,20 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
-	return (check_perfect(tree, binary_tree_height(tree), 0));
+	return (binary_tree_size(tree) + 1 == _pow(2, binary_tree_height(tree) + 1));
 }
 
 /**
- * check_perfect - recursively checks if binary tree is perfect
+ * binary_tree_size - calculates the size of the tree
  * @tree: pointer to root of tree
- * @height: height of tree
- * @level: current level
  *
- * Return: 1 if tree is perfect, 0 otherwise
+ * Return: size of tree or 0 if NULL
  */
-int check_perfect(const binary_tree_t *tree, size_t height, size_t level)
+size_t binary_tree_size(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
-	if (tree->left != NULL && tree->right != NULL)
-	{
-		if (binary_tree_is_leaf(tree->left) && binary_tree_is_leaf(tree->right))
-			return (level + 1 == height);
-		if (!binary_tree_is_leaf(tree->left) && !binary_tree_is_leaf(tree->right))
-			return (check_perfect(tree->left, height, level + 1) &&
-					check_perfect(tree->right, height, level + 1));
-	}
-	return (0);
-}
-
-/**
- * binary_tree_is_leaf - Checks if given node is a leaf
- * @node: node to check
- *
- * Return: 1 if node is a leaf, 0 otherwise
- */
-int binary_tree_is_leaf(const binary_tree_t *node)
-{
-	if (node == NULL || node->right != NULL || node->left != NULL)
-		return (0);
-	return (1);
+	return (1 + binary_tree_size(tree->right) + binary_tree_size(tree->left));
 }
 
 /**
@@ -67,4 +44,21 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	if (lsum > rsum)
 		return (lsum + 1);
 	return (rsum + 1);
+}
+
+/**
+ * pow - calculates the power of one number to another
+ * @a: base number
+ * @b: power
+ *
+ * Return: a^b
+ */
+size_t _pow(size_t a, size_t b)
+{
+	size_t i;
+	size_t ans;
+
+	for (i = 0, ans = 1; i < b; i++)
+		ans *= a;
+	return (ans);
 }
