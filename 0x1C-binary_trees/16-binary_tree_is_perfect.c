@@ -47,7 +47,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 }
 
 /**
- * pow - calculates the power of one number to another
+ * _pow - calculates the power of one number to another
  * @a: base number
  * @b: power
  *
