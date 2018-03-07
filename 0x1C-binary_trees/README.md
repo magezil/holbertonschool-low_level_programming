@@ -79,3 +79,7 @@
 * Find the uncle of a node
 * Prototype: `binary_tree_t *binary_tree_uncle(binary_tree_t *node);`
 
+### 100-binary_trees_ancestor.c
+* Find lowest common ancestor of two nodes
+* Prototype: `binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);`
+
