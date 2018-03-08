@@ -26,7 +26,7 @@ int bst_check(const binary_tree_t *tree, int min, int max)
 {
 	if (tree == NULL)
 		return (1);
-	if (tree->n < min || tree->n > max)
+	if (tree->n <= min || tree->n >= max)
 		return (0);
 	return (bst_check(tree->left, min, tree->n) &&
 			bst_check(tree->right, tree->n, max));
