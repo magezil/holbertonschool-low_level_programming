@@ -91,3 +91,11 @@
 * Checks if binary tree is complete
 * Prototype: `int binary_tree_is_complete(const binary_tree_t *tree);`
 
+### 103-binary_tree_rotate_left.c
+* Rotate tree to the left
+* Prototype: `binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);`
+
+### 104-binary_tree_rotate_right.c
+* Rotate tree to the right
+* Prototype: `binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);`
+
