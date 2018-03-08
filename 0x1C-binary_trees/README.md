@@ -122,3 +122,7 @@
 ### 115-O
 * Lists average time complexities for inserting a node with the value n, removing a node with value n, and searching for a node in a BST of size n
 
+### 130-binary_tree_is_heap.c
+* Checks if binary tree is a Max Binary Heap
+* Prototype: `int binary_tree_is_heap(const binary_tree_t *tree);`
+
