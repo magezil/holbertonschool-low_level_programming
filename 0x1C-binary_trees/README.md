@@ -111,3 +111,7 @@
 * Convert an array to a Binary Search Tree
 * Prototype: `bst_t *array_to_bst(int *array, size_t size);`
 
+### 113-bst_search.c
+* Search for a value in a Binary Search Tree
+* Prototype: `bst_t *bst_search(const bst_t *tree, int value);`
+
