@@ -115,3 +115,7 @@
 * Search for a value in a Binary Search Tree
 * Prototype: `bst_t *bst_search(const bst_t *tree, int value);`
 
+### 114-bst_remove.c
+* Removes a node from a BST
+* Prototype: `bst_t *bst_remove(bst_t *root, int value);`
+
