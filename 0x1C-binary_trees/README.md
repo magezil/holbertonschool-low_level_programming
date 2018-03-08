@@ -87,3 +87,7 @@
 * Traverses through tree using level order traversal
 * Prototype: `void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));`
 
+### 102-binary_tree_is_complete.c
+* Checks if binary tree is complete
+* Prototype: `int binary_tree_is_complete(const binary_tree_t *tree);`
+
