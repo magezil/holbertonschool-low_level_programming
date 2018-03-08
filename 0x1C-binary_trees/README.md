@@ -103,3 +103,7 @@
 * Check if binary tree is a valid Binary Search Tree
 * Prototype: `int binary_tree_is_bst(const binary_tree_t *tree);`
 
+### 111-bst_insert.c
+* Inserts a value into a Binary Search Tree
+* Prototype: `bst_t *bst_insert(bst_t **tree, int value);`
+
