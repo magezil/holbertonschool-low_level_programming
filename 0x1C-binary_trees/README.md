@@ -99,3 +99,7 @@
 * Rotate tree to the right
 * Prototype: `binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);`
 
+### 110-binary_tree_is_bst.c
+* Check if binary tree is a valid Binary Search Tree
+* Prototype: `int binary_tree_is_bst(const binary_tree_t *tree);`
+
