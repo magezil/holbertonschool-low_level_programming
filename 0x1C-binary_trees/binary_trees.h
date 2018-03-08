@@ -73,4 +73,5 @@ size_t _pow(size_t a, size_t b);
 int complete_rec(const binary_tree_t *tree, size_t count, size_t index);
 int bst_check(const binary_tree_t *tree, int min, int max);
 bst_t *find_successor(bst_t *root);
+
 #endif /* _BINARY_TREES_H_ */

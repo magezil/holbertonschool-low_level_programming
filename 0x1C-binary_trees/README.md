@@ -119,3 +119,6 @@
 * Removes a node from a BST
 * Prototype: `bst_t *bst_remove(bst_t *root, int value);`
 
+### 115-O
+* Lists average time complexities for inserting a node with the value n, removing a node with value n, and searching for a node in a BST of size n
+
