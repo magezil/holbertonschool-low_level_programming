@@ -107,3 +107,7 @@
 * Inserts a value into a Binary Search Tree
 * Prototype: `bst_t *bst_insert(bst_t **tree, int value);`
 
+### 112-array_to_bst.c
+* Convert an array to a Binary Search Tree
+* Prototype: `bst_t *array_to_bst(int *array, size_t size);`
+
