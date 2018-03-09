@@ -31,7 +31,7 @@ bst_t *bst_remove(bst_t *root, int value)
 		return (root);
 	}
 	node->parent->left = node->right;
-	node->right = node->parent;
+	node->right = rem->right;
 	node->parent = rem->parent;
 	node->right->parent = node;
 	node->left = rem->left;
