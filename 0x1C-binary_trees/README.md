@@ -130,3 +130,7 @@
 * Insert a value into Max Binary Heap
 * Prototype: `heap_t *heap_insert(heap_t **root, int value);`
 
+### 120-binary_tree_is_avl.c
+* Check if binary tree is valid AVL Tree
+* Prototype: `int binary_tree_is_avl(const binary_tree_t *tree);`
+
