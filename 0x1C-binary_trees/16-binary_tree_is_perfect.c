@@ -8,9 +8,12 @@
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
+	size_t num_nodes, i;
 	if (tree == NULL)
 		return (0);
-	return (binary_tree_size(tree) + 1 == _pow(2, binary_tree_height(tree) + 1));
+	for (i = 0, num_nodes = 1; i <= binary_tree_height(tree); i++)
+		num_nodes *= 2;
+	return (binary_tree_size(tree) + 1 == num_nodes);
 }
 
 /**
@@ -44,21 +47,4 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	if (lsum > rsum)
 		return (lsum + 1);
 	return (rsum + 1);
-}
-
-/**
- * _pow - calculates the power of one number to another
- * @a: base number
- * @b: power
- *
- * Return: a^b
- */
-size_t _pow(size_t a, size_t b)
-{
-	size_t i;
-	size_t ans;
-
-	for (i = 0, ans = 1; i < b; i++)
-		ans *= a;
-	return (ans);
 }
