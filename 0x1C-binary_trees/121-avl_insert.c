@@ -82,6 +82,8 @@ avl_t *balance_left(avl_t **tree, avl_t *next)
 			parent->left->parent = parent;
 		}
 	}
+	else
+		*tree = binary_tree_rotate_right(*tree);
 	return (*tree);
 }
 
@@ -115,5 +117,7 @@ avl_t *balance_right(avl_t **tree, avl_t *next)
 			parent->left->parent = parent;
 		}
 	}
+	else
+		*tree = binary_tree_rotate_right(*tree);
 	return (*tree);
 }
