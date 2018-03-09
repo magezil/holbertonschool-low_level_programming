@@ -126,3 +126,7 @@
 * Checks if binary tree is a Max Binary Heap
 * Prototype: `int binary_tree_is_heap(const binary_tree_t *tree);`
 
+### 131-heap_insert.c
+* Insert a value into Max Binary Heap
+* Prototype: `heap_t *heap_insert(heap_t **root, int value);`
+

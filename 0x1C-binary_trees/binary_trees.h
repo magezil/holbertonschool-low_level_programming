@@ -69,8 +69,8 @@ bst_t *array_to_bst(int *array, size_t size);
 bst_t *bst_search(const bst_t *tree, int value);
 bst_t *bst_remove(bst_t *root, int value);
 int binary_tree_is_heap(const binary_tree_t *tree);
+heap_t *heap_insert(heap_t **root, int value);
 
-size_t _pow(size_t a, size_t b);
 int complete_rec(const binary_tree_t *tree, size_t count, size_t index);
 int bst_check(const binary_tree_t *tree, int min, int max);
 bst_t *find_successor(bst_t *root);
