@@ -138,3 +138,7 @@
 * Insert value in AVL tree
 * Prototype: `avl_t *avl_insert(avl_t **tree, int value);`
 
+### 122-array_to_avl.c
+* Build an AVL tree from an array
+* Prototype: `avl_t *array_to_avl(int *array, size_t size);`
+
