@@ -134,3 +134,7 @@
 * Check if binary tree is valid AVL Tree
 * Prototype: `int binary_tree_is_avl(const binary_tree_t *tree);`
 
+### 121-avl_insert.c
+* Insert value in AVL tree
+* Prototype: `avl_t *avl_insert(avl_t **tree, int value);`
+
