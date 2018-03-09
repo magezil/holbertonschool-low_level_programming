@@ -118,6 +118,6 @@ avl_t *balance_right(avl_t **tree, avl_t *next)
 		}
 	}
 	else
-		*tree = binary_tree_rotate_right(*tree);
+		*tree = binary_tree_rotate_left(*tree);
 	return (*tree);
 }
