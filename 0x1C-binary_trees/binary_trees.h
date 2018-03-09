@@ -74,6 +74,7 @@ int binary_tree_is_avl(const binary_tree_t *tree);
 avl_t *avl_insert(avl_t **tree, int value);
 avl_t *array_to_avl(int *array, size_t size);
 avl_t *avl_remove(avl_t *root, int value);
+avl_t *sorted_array_to_avl(int *array, size_t size);
 
 int binary_tree_is_heap(const binary_tree_t *tree);
 heap_t *heap_insert(heap_t **root, int value);
@@ -85,5 +86,6 @@ int avl_check(const binary_tree_t *tree, int min, int max);
 int heap_check(const binary_tree_t *tree, int max, size_t size, size_t index);
 avl_t *balance_left(avl_t **tree, avl_t *next);
 avl_t *balance_right(avl_t **tree, avl_t *next);
+avl_t *create_avl(int *array, avl_t **tree, size_t start, size_t end);
 
 #endif /* _BINARY_TREES_H_ */

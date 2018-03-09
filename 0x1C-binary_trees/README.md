@@ -146,3 +146,7 @@
 * Remove node from AVL tree
 * Prototype: `avl_t *avl_remove(avl_t *root, int value);`
 
+### 124-sorted_array_to_avl.c
+* Build an AVL tree from an array
+* Prototype: `avl_t *sorted_array_to_avl(int *array, size_t size);`
+
