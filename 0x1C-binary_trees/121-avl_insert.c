@@ -21,6 +21,7 @@ avl_t *avl_insert(avl_t **tree, int value)
 		return (*tree);
 	}
 	new = NULL;
+	next = NULL;
 	if ((*tree)->n > value)
 	{
 		next = (*tree)->left;
@@ -40,11 +41,14 @@ avl_t *avl_insert(avl_t **tree, int value)
 		}
 	}
 	new = avl_insert(&next, value);
-	balance = binary_tree_balance(*tree);
-	if (balance > 1)
-		balance_left(tree, next);
-	else if (balance < -1)
-		balance_right(tree, next);
+	if (new != NULL)
+	{
+		balance = binary_tree_balance(*tree);
+		if (balance > 1)
+			balance_left(tree, next);
+		else if (balance < -1)
+			balance_right(tree, next);
+	}
 	return (new);
 }
 
