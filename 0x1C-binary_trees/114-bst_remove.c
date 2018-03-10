@@ -17,8 +17,10 @@ bst_t *bst_remove(bst_t *root, int value)
 	node = find_successor(rem->right);
 	if (root->n == value)
 	{
-		if (node == NULL)
+		if (node == NULL && root->left == NULL)
 			return (NULL);
+		else if (node == NULL)
+			return (root->left);
 		node->parent->left = node->right;
 		node->right = node->parent;
 		node->right->parent = node;
