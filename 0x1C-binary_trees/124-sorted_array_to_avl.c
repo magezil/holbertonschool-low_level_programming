@@ -37,7 +37,10 @@ avl_t *create_avl(int *array, avl_t **tree, size_t start, size_t end)
 		return (*tree);
 	if (start == end)
 	{
-		avl_insert(tree, array[start]);
+		if (*tree == NULL)
+			*tree = avl_insert(tree, array[start]);
+		else
+			avl_insert(tree, array[start]);
 		return (*tree);
 	}
 

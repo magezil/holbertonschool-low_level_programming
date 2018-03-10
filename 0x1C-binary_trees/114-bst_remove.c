@@ -9,14 +9,14 @@
  */
 bst_t *bst_remove(bst_t *root, int value)
 {
-	bst_t *node;
-	bst_t *rem; /* node to remove */
+	bst_t *node, *rem; /* node to remove */
 
-	if (root == NULL)
+	rem = bst_search(root, value);
+	if (rem == NULL)
 		return (NULL);
+	node = find_successor(rem->right);
 	if (root->n == value)
 	{
-		node = find_successor(root->right);
 		if (node == NULL)
 			return (NULL);
 		node->parent->left = node->right;
@@ -29,10 +29,6 @@ bst_t *bst_remove(bst_t *root, int value)
 		free(root);
 		return (node);
 	}
-	rem = bst_search(root, value);
-	if (rem == NULL)
-		return (NULL);
-	node = find_successor(rem->right);
 	if (node == NULL)
 	{
 		node = rem->left;
