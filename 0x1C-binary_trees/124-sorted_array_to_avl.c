@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-#include <stdio.h>
 
 /**
  * sorted_array_to_avl - create an AVL tree from a sorted array
@@ -45,9 +44,7 @@ avl_t *create_avl(int *array, avl_t **tree, size_t start, size_t end)
 	}
 
 	mid = (end - start) / 2 + start;
-	printf("inserting %d\n", array[mid]);
 	avl_insert(tree, array[mid]);
-	binary_tree_print(*tree);
 	create_avl(array, tree, start, mid - 1);
 	create_avl(array, tree, mid + 1, end);
 	return (*tree);
