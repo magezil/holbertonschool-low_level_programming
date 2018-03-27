@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+#include "stdio.h"
 
 /**
  * bst_remove - removes a node from a BST
@@ -11,43 +12,33 @@ bst_t *bst_remove(bst_t *root, int value)
 {
 	bst_t *node, *rem; /* node to remove */
 
-	rem = bst_search(root, value);
-	if (rem == NULL)
+	if (root == NULL)
 		return (NULL);
-	node = find_successor(rem->right);
 	if (root->n == value)
 	{
+		rem = root;
+		node = find_successor(rem->right);
 		if (node == NULL && root->left == NULL)
+		{
+			free(root);
 			return (NULL);
+		}
 		else if (node == NULL)
-			return (root->left);
-		node->parent->left = node->right;
-		node->right = node->parent;
-		node->right->parent = node;
-		node->parent = NULL;
-		node->left = root->left;
-		if (root->left != NULL)
-			root->left->parent = node;
-		free(root);
-		return (node);
-	}
-	if (node == NULL)
-	{
-		node = rem->left;
-		node->parent = rem->parent;
-		rem->parent->right = node;
-		free(rem);
+		{
+			root = root->left;
+			root->parent = rem->parent;
+			free(rem);
+			return (root);
+		}
+		root->n = node->n;
+		root->right = bst_remove(root->right, node->n);
 		return (root);
 	}
-	node->parent->left = node->right;
-	node->right = node->parent;
-	node->parent = rem->parent;
-	node->right->parent = node;
-	node->left = rem->left;
-	rem->parent->left = node;
-	if (rem->left != NULL)
-		rem->left->parent = node;
-	free(rem);
+	else if (root->n > value)
+		root->left = bst_remove(root->left, value);
+	else
+		root->right = bst_remove(root->right, value);
+
 	return (root);
 }
 
