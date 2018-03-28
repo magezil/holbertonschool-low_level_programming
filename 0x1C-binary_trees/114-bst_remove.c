@@ -30,6 +30,15 @@ bst_t *bst_remove(bst_t *root, int value)
 			free(rem);
 			return (root);
 		}
+		else if (node->n == root->right->n)
+		{
+			root = root->right;
+			root->parent = rem->parent;
+			root->left = rem->left;
+			rem->left->parent = root;
+			free(rem);
+			return (root);
+		}
 		root->n = node->n;
 		root->right = bst_remove(root->right, node->n);
 		return (root);
