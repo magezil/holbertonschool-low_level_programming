@@ -29,8 +29,10 @@ int bin_search_recursive(int *array, size_t start, size_t end, int value)
 	size_t mid, i;
 	char *delim;
 
-	if (start > end)
+	if (start >= end && array[start] != value)
 		return (-1);
+	if (array[start] == value)
+		return (start);
 	printf("Searching in array:");
 	delim = " ";
 	for (i = start; i < end; i++)
@@ -39,12 +41,10 @@ int bin_search_recursive(int *array, size_t start, size_t end, int value)
 		delim = ", ";
 	}
 	printf("\n");
-	mid = (end - start) / 2 + start;
+	mid = (end - start - 1) / 2 + start;
 	if (value == array[mid])
 		return (mid);
-	if (mid == start)
-		return (-1);
 	if (value > array[mid])
-		return (bin_search_recursive(array, mid, end, value));
+		return (bin_search_recursive(array, mid + 1, end, value));
 	return (bin_search_recursive(array, start, mid, value));
 }

@@ -37,3 +37,7 @@ int **allocate_map(int n, int m)
 }
 ```
 
+### 100-jump.c
+* Use jump search to find a number in an array
+* Prototype: `int jump_search(int *array, size_t size, int value);`
+
