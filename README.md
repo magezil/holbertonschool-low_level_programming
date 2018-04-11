@@ -29,3 +29,4 @@
 0x1A-sorting_algorithms - Sorting algorithms & Big O  
 0x1B-makefiles - Makefiles  
 0x1C-binary_trees - Binary Trees  
+0x1D-search_algorithms - Search algorithms  
