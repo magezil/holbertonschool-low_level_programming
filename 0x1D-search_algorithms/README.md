@@ -44,3 +44,7 @@ int **allocate_map(int n, int m)
 ### 101-O
 * Big O for time complexity of jump search (average case)
 
+### 102-interpolation.c
+* Use interpolation search to find a value in given array
+* Prototype: `int interpolation_search(int *array, size_t size, int value);`
+
