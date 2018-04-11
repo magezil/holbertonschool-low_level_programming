@@ -48,3 +48,7 @@ int **allocate_map(int n, int m)
 * Use interpolation search to find a value in given array
 * Prototype: `int interpolation_search(int *array, size_t size, int value);`
 
+### 103-exponential.c
+* Use exponential search to find an element in a list
+* Prototype: `int exponential_search(int *array, size_t size, int value);`
+
