@@ -52,3 +52,7 @@ int **allocate_map(int n, int m)
 * Use exponential search to find an element in a list
 * Prototype: `int exponential_search(int *array, size_t size, int value);`
 
+### 104-advanced_binary.c
+* Use binary search to find first instance of value in array
+* Prototype: `int advanced_binary(int *array, size_t size, int value);`
+
