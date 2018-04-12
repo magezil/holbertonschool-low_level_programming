@@ -56,3 +56,8 @@ int **allocate_map(int n, int m)
 * Use binary search to find first instance of value in array
 * Prototype: `int advanced_binary(int *array, size_t size, int value);`
 
+### 107-O
+* Big O for time complexity of jump search (average case)
+
+### 108-O
+* Big O for time complexity of jump search in skip list (average case)
