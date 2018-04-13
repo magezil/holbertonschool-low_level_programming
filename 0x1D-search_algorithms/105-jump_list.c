@@ -7,15 +7,15 @@
  * @size: size of array
  * @value: value to find
  *
- * Return: index of value or -1 if not found
+ * Return: node with value or NULL if not found
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	size_t jump, i, jump_i;
-	listint_t prev, current;
+	size_t jump, i, jumpi;
+	listint_t *prev, *current;
 
 	if (list == NULL)
-		return (-1);
+		return (NULL);
 	jump = sqrt(size);
 	jumpi = 0;
 	current = list;
@@ -38,7 +38,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	{
 		printf("Value checked at index [%lu] = [%d]\n", i, prev->n);
 		if (prev->n == value)
-			return (prev->i);
+			return (prev);
 	}
-	return (-1);
+	return (NULL);
 }
