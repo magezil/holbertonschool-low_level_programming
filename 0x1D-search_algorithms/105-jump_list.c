@@ -2,7 +2,7 @@
 
 /**
  * jump_list - use jump search to find a value in a singly linked list
- * @array: pointer to first element in linked list to search
+ * @list: pointer to first element in linked list to search
  * @size: size of array
  * @value: value to find
  *
@@ -10,8 +10,8 @@
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-    size_t jump, i, jump_i;
-    listint_t prev, current;
+	size_t jump, i, jump_i;
+	listint_t prev, current;
 
 	if (list == NULL)
 		return (-1);
@@ -32,7 +32,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		}
 		current = current->next;
 	}
-	printf("Value found between indices [%lu] and [%lu]\n", prev->index, current->index);
+	printf("Value found between indices [%lu] and [%lu]\n", prev->index, i);
 	for (i = prev->index; prev->index <= current->index; prev = prev->next, i++)
 	{
 		printf("Value checked at index [%lu] = [%d]\n", i, prev->n);
