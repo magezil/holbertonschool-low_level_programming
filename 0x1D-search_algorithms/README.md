@@ -56,6 +56,14 @@ int **allocate_map(int n, int m)
 * Use binary search to find first instance of value in array
 * Prototype: `int advanced_binary(int *array, size_t size, int value);`
 
+### 105-jump_list.c
+* use jump search to find a value in a singly linked list
+* Prototype: `listint_t *jump_list(listint_t *list, size_t size, int value);`
+
+### 106-linear_skip.c
+* find a value in a skip linked list
+* Prototype: `skiplist_t *linear_skip(skiplist_t *list, int value);`
+
 ### 107-O
 * Big O for time complexity of jump search (average case)
 
